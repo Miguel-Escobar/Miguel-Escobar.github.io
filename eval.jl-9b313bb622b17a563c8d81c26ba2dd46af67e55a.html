@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
     <link rel='stylesheet' type='text/css' href='statprofiler.css'></link>
-    <title>StatProfilerHTML - ..\..\..\.julia\packages\DiffEqBase\eTCPy\src\calculate_residuals.jl</title>
+    <title>StatProfilerHTML - ..\..\..\.julia\packages\Tullio\vChiX\src\eval.jl</title>
   </head>
   <body>
     <div class='report-header'>
@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -35,7 +35,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L2'>
@@ -45,7 +45,7 @@
           <td>
             
             
-            <span class='code'>    calculate_residuals&#40;ũ, u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'>#&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61; master evaluator &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;#</span>
           </td>
         </tr>
         <tr id='L3'>
@@ -65,7 +65,7 @@
           <td>
             
             
-            <span class='code'>Calculate element-wise residuals</span>
+            <span class='code'>&quot;&quot;&quot;</span>
           </td>
         </tr>
         <tr id='L5'>
@@ -75,7 +75,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;math</span>
+            <span class='code'>    Eval&#40;fwd, rev&#41;</span>
           </td>
         </tr>
         <tr id='L6'>
@@ -85,7 +85,7 @@
           <td>
             
             
-            <span class='code'>\\frac&#123;ũ&#125;&#123;α&#43;\\max&#123;|u₀|,|u₁|&#125;*ρ&#125;</span>
+            <span class='code'>    &#40;e::Eval&#41;&#40;A,B&#41; &#61; fwd&#40;A,B&#41;</span>
           </td>
         </tr>
         <tr id='L7'>
@@ -95,7 +95,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L8'>
@@ -105,7 +105,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'>This holds the functions &#96;&#36;MAKE&#96; which creates the output array</span>
           </td>
         </tr>
         <tr id='L9'>
@@ -115,7 +115,7 @@
           <td>
             
             
-            <span class='code'>@inline @muladd function calculate_residuals&#40;ũ::Number, u₀::Number, u₁::Number,</span>
+            <span class='code'>&#40;before calling &#96;threader&#40;&#36;ACT&#33;,...&#41;&#96; to fill it&#41;</span>
           </td>
         </tr>
         <tr id='L10'>
@@ -125,7 +125,7 @@
           <td>
             
             
-            <span class='code'>    α, ρ, internalnorm, t&#41;</span>
+            <span class='code'>and the function &#96;∇&#36;MAKE&#96; which does the reverse pass for differentiation.</span>
           </td>
         </tr>
         <tr id='L11'>
@@ -135,7 +135,7 @@
           <td>
             
             
-            <span class='code'>    @fastmath ũ / &#40;α &#43; max&#40;internalnorm&#40;u₀, t&#41;, internalnorm&#40;u₁, t&#41;&#41; * ρ&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L12'>
@@ -145,7 +145,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>It exists so that gradient hooks for various packages can be attached to this,</span>
           </td>
         </tr>
         <tr id='L13'>
@@ -155,7 +155,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>once. Then &#96;&#36;MAKE&#96; need only be defined in local scope.</span>
           </td>
         </tr>
         <tr id='L14'>
@@ -165,7 +165,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#40;ũ::Array&#123;T&#125;, u₀::Array&#123;T&#125;, u₁::Array&#123;T&#125;, α::T2,</span>
+            <span class='code'>&quot;&quot;&quot;</span>
           </td>
         </tr>
         <tr id='L15'>
@@ -175,7 +175,7 @@
           <td>
             
             
-            <span class='code'>    ρ::Real, internalnorm,</span>
+            <span class='code'>struct Eval&#123;F,R&#125;</span>
           </td>
         </tr>
         <tr id='L16'>
@@ -185,7 +185,7 @@
           <td>
             
             
-            <span class='code'>    t&#41; where</span>
+            <span class='code'>    fwd::F</span>
           </td>
         </tr>
         <tr id='L17'>
@@ -195,7 +195,7 @@
           <td>
             
             
-            <span class='code'>    &#123;T &lt;: Number, T2 &lt;: Number&#125;</span>
+            <span class='code'>    rev::R</span>
           </td>
         </tr>
         <tr id='L18'>
@@ -205,7 +205,7 @@
           <td>
             
             
-            <span class='code'>    out &#61; similar&#40;ũ&#41;</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L19'>
@@ -215,17 +215,31 @@
           <td>
             
             
-            <span class='code'>    calculate_residuals&#33;&#40;out, ũ, u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L20'>
           <td class='lineno'>20</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
+          <td class='tracecount excl'>1 &#40;2 &#37;&#41;</td>
+          <td class='tracecount incl'>30 &#40;73 &#37;&#41;</td>
           <td>
-            
-            
-            <span class='code'>    out</span>
+            <div class='call-sites'>
+              30 &#40;73 &#37;&#41;
+              samples spent in Eval
+              <br />
+              1 &#40;3 &#37;&#41; &#40;ex.&#41;,
+              30 &#40;100 &#37;&#41; &#40;incl.&#41;
+              when called from macro expansion
+              <a href='macro.jl-c385e4a5c3d9d541c25702f8d4abafd11724f5d0.html#L976'>line 976</a>
+              <br />
+            </div>
+            <div class='callees'>
+              29 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='macro.jl-c385e4a5c3d9d541c25702f8d4abafd11724f5d0.html#L968'>ℳ𝒶𝓀ℯ</a>
+              <br />
+            </div>
+            <span class='code'>&#40;ev::Eval&#41;&#40;args...&#41; &#61; ev.fwd&#40;args...&#41;</span>
           </td>
         </tr>
         <tr id='L21'>
@@ -235,7 +249,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L22'>
@@ -245,7 +259,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>#&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61; scalar struct &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;#</span>
           </td>
         </tr>
         <tr id='L23'>
@@ -255,7 +269,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#40;ũ, u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L24'>
@@ -265,7 +279,7 @@
           <td>
             
             
-            <span class='code'>    @.. broadcast&#61;false calculate_residuals&#40;ũ, u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'>&quot;&quot;&quot;</span>
           </td>
         </tr>
         <tr id='L25'>
@@ -275,7 +289,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    OneBox&#40;val&#41;</span>
           </td>
         </tr>
         <tr id='L26'>
@@ -295,7 +309,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'>Trivial 1-element vector, used for scalar redutcions,</span>
           </td>
         </tr>
         <tr id='L28'>
@@ -305,7 +319,7 @@
           <td>
             
             
-            <span class='code'>    calculate_residuals&#40;u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'>to pass the eltype to &#96;∇&#36;ACT&#33;&#40;AT, 𝛥A, ::AbstractArray&#123;&#36;TYP&#125;, ...&#41;&#96;</span>
           </td>
         </tr>
         <tr id='L29'>
@@ -315,7 +329,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>&quot;&quot;&quot;</span>
           </td>
         </tr>
         <tr id='L30'>
@@ -325,7 +339,7 @@
           <td>
             
             
-            <span class='code'>Calculate element-wise residuals</span>
+            <span class='code'>struct OneBox&#123;T&#125; &lt;: AbstractVector&#123;T&#125;</span>
           </td>
         </tr>
         <tr id='L31'>
@@ -335,7 +349,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;math</span>
+            <span class='code'>    val::T</span>
           </td>
         </tr>
         <tr id='L32'>
@@ -345,7 +359,7 @@
           <td>
             
             
-            <span class='code'>\\frac&#123;u₁ - u₀&#125;&#123;α&#43;\\max&#123;|u₀|,|u₁|&#125;*ρ&#125;</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L33'>
@@ -355,7 +369,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;</span>
+            <span class='code'>Base.size&#40;::OneBox&#41; &#61; &#40;1,&#41;</span>
           </td>
         </tr>
         <tr id='L34'>
@@ -365,7 +379,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'>Base.getindex&#40;o::OneBox, i::Integer...&#41; &#61; o.val</span>
           </td>
         </tr>
         <tr id='L35'>
@@ -385,7 +399,7 @@
           <td>
             
             
-            <span class='code'>@inline @muladd function calculate_residuals&#40;u₀::Number, u₁::Number,</span>
+            <span class='code'>#&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61; gradient hooks &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;#</span>
           </td>
         </tr>
         <tr id='L37'>
@@ -395,7 +409,7 @@
           <td>
             
             
-            <span class='code'>    α, ρ, internalnorm, t&#41;</span>
+            <span class='code'># Macros like @adjoint need to be hidden behind include&#40;&#41;, it seems:</span>
           </td>
         </tr>
         <tr id='L38'>
@@ -405,7 +419,7 @@
           <td>
             
             
-            <span class='code'>    @fastmath &#40;u₁ - u₀&#41; / &#40;α &#43; max&#40;internalnorm&#40;u₀, t&#41;, internalnorm&#40;u₁, t&#41;&#41; * ρ&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L39'>
@@ -415,7 +429,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'># @init @require ReverseDiff &#61; &quot;37e2e3b7-166d-5795-8a7a-e32c996b4267&quot; include&#40;&quot;grad/reverse.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L40'>
@@ -435,7 +449,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#40;u₀::Array&#123;T&#125;, u₁::Array&#123;T&#125;, α::T2,</span>
+            <span class='code'>if &#33;isdefined&#40;Base, :get_extension&#41;</span>
           </td>
         </tr>
         <tr id='L42'>
@@ -445,7 +459,7 @@
           <td>
             
             
-            <span class='code'>    ρ::Real, internalnorm,</span>
+            <span class='code'>    using Requires</span>
           </td>
         </tr>
         <tr id='L43'>
@@ -455,7 +469,7 @@
           <td>
             
             
-            <span class='code'>    t&#41; where &#123;T &lt;: Number, T2 &lt;: Number&#125;</span>
+            <span class='code'>    include&#40;&quot;../ext/TullioChainRulesCoreExt.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L44'>
@@ -465,7 +479,7 @@
           <td>
             
             
-            <span class='code'>    out &#61; similar&#40;u₀&#41;</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L45'>
@@ -475,7 +489,7 @@
           <td>
             
             
-            <span class='code'>    calculate_residuals&#33;&#40;out, u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L46'>
@@ -485,7 +499,7 @@
           <td>
             
             
-            <span class='code'>    out</span>
+            <span class='code'>@static if &#33;isdefined&#40;Base, :get_extension&#41;</span>
           </td>
         </tr>
         <tr id='L47'>
@@ -495,7 +509,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    function __init__&#40;&#41;</span>
           </td>
         </tr>
         <tr id='L48'>
@@ -505,7 +519,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>        @require Tracker &#61; &quot;9f7883ad-71c0-57eb-9f7f-b5c9e6d3789c&quot; include&#40;&quot;../ext/TullioTrackerExt.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L49'>
@@ -515,7 +529,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#40;u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'>        @require FillArrays &#61; &quot;1a297f60-69ca-5386-bcde-b61e274b549b&quot; include&#40;&quot;../ext/TullioFillArraysExt.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L50'>
@@ -525,7 +539,7 @@
           <td>
             
             
-            <span class='code'>    @.. broadcast&#61;false calculate_residuals&#40;u₀, u₁, α, ρ, internalnorm, t&#41;</span>
+            <span class='code'>        @require CUDA &#61; &quot;052768ef-5323-5732-b1bb-66c8b64840ba&quot; include&#40;&quot;../ext/TullioCUDAExt.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L51'>
@@ -535,7 +549,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    end</span>
           </td>
         </tr>
         <tr id='L52'>
@@ -545,7 +559,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L53'>
@@ -555,7 +569,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L54'>
@@ -565,7 +579,7 @@
           <td>
             
             
-            <span class='code'>    calculate_residuals&#40;E₁, E₂, u₀, u₁, α, ρ, δ, scalarnorm, t&#41;</span>
+            <span class='code'>#&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61; vectorised gradients &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;#</span>
           </td>
         </tr>
         <tr id='L55'>
@@ -585,7 +599,7 @@
           <td>
             
             
-            <span class='code'>Return element-wise residuals</span>
+            <span class='code'>@inline onlyone&#40;cond::Bool&#41; &#61; cond</span>
           </td>
         </tr>
         <tr id='L57'>
@@ -595,7 +609,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;math</span>
+            <span class='code'>@inline onlyone&#40;cond::Bool, seen::Int&#41; &#61; cond &amp;&amp; iszero&#40;seen&#41;</span>
           </td>
         </tr>
         <tr id='L58'>
@@ -605,7 +619,7 @@
           <td>
             
             
-            <span class='code'>\\frac&#123;δ E₁ &#43; E₂&#125;&#123;α&#43;\\max&#123;scalarnorm&#40;u₀&#41;,scalarnorm&#40;u₁&#41;&#125;*ρ&#125;.</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L59'>
@@ -615,7 +629,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;</span>
+            <span class='code'>@inline anyone&#40;cond::Bool&#41; &#61; cond</span>
           </td>
         </tr>
         <tr id='L60'>
@@ -625,7 +639,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L61'>
@@ -635,7 +649,7 @@
           <td>
             
             
-            <span class='code'>@inline @muladd function calculate_residuals&#40;E₁::Number, E₂::Number, u₀::Number, u₁::Number,</span>
+            <span class='code'>#&#61;</span>
           </td>
         </tr>
         <tr id='L62'>
@@ -645,7 +659,7 @@
           <td>
             
             
-            <span class='code'>    α::Real, ρ::Real, δ::Number, scalarnorm, t&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L63'>
@@ -655,7 +669,7 @@
           <td>
             
             
-            <span class='code'>    @fastmath &#40;δ * E₁ &#43; E₂&#41; / &#40;α &#43; max&#40;scalarnorm&#40;u₀, t&#41;, scalarnorm&#40;u₁, t&#41;&#41; * ρ&#41;</span>
+            <span class='code'>@init @require LoopVectorization &#61; &quot;bdcacae8-1622-11e9-2a5c-532679323890&quot; begin</span>
           </td>
         </tr>
         <tr id='L64'>
@@ -665,7 +679,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    using .LoopVectorization # version 0.9&#43; only now</span>
           </td>
         </tr>
         <tr id='L65'>
@@ -675,7 +689,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    using .LoopVectorization.VectorizationBase: Vec, Mask, prevpow2</span>
           </td>
         </tr>
         <tr id='L66'>
@@ -685,7 +699,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#40;E₁::Array&#123;&lt;:Number&#125;, E₂::Array&#123;&lt;:Number&#125;,</span>
+            <span class='code'>    SVec&#123;N,T&#125; &#61; Vec&#123;N,T&#125;</span>
           </td>
         </tr>
         <tr id='L67'>
@@ -695,7 +709,7 @@
           <td>
             
             
-            <span class='code'>    u₀::Array&#123;&lt;:Number&#125;, u₁::Array&#123;&lt;:Number&#125;, α::Real,</span>
+            <span class='code'>    end</span>
           </td>
         </tr>
         <tr id='L68'>
@@ -705,7 +719,7 @@
           <td>
             
             
-            <span class='code'>    ρ::Real, δ::Number, scalarnorm, t&#41;</span>
+            <span class='code'>    # Functions needed for safe vectorised max gradient</span>
           </td>
         </tr>
         <tr id='L69'>
@@ -715,7 +729,7 @@
           <td>
             
             
-            <span class='code'>    out &#61; similar&#40;u₀&#41;</span>
+            <span class='code'>    @inline Tullio.onlyone&#40;cond::Bool, seen::SVec&#41; &#61; cond &amp;&amp; allzero&#40;seen&#41;</span>
           </td>
         </tr>
         <tr id='L70'>
@@ -725,7 +739,7 @@
           <td>
             
             
-            <span class='code'>    calculate_residuals&#33;&#40;out, E₁, E₂, u₀, u₁, α, ρ, δ, scalarnorm, t&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L71'>
@@ -735,7 +749,7 @@
           <td>
             
             
-            <span class='code'>    out</span>
+            <span class='code'>    @inline Tullio.onlyone&#40;cond::Mask&#123;W&#125;&#41; where &#123;W&#125; &#61; Mask&#123;W&#125;&#40;prevpow2&#40;cond.u&#41;&#41;</span>
           </td>
         </tr>
         <tr id='L72'>
@@ -745,7 +759,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    @inline Tullio.onlyone&#40;cond::Mask, seen::Union&#123;Int,SVec&#125;&#41; &#61;</span>
           </td>
         </tr>
         <tr id='L73'>
@@ -755,7 +769,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>        Tullio.allzero&#40;seen&#41; ? Tullio.onlyone&#40;cond&#41; : zero&#40;cond&#41;</span>
           </td>
         </tr>
         <tr id='L74'>
@@ -765,7 +779,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#40;E₁, E₂, u₀, u₁, α, ρ, δ, scalarnorm, t&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L75'>
@@ -775,7 +789,7 @@
           <td>
             
             
-            <span class='code'>    @.. broadcast&#61;false calculate_residuals&#40;E₁, E₂, u₀, u₁, α, ρ, δ, scalarnorm, t&#41;</span>
+            <span class='code'>    @inline allzero&#40;seen::Integer&#41; &#61; iszero&#40;seen&#41;</span>
           </td>
         </tr>
         <tr id='L76'>
@@ -785,7 +799,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    @inline allzero&#40;seen::SVec&#41; &#61; iszero&#40;&#40;&#33;iszero&#40;seen&#41;&#41;.u&#41;</span>
           </td>
         </tr>
         <tr id='L77'>
@@ -805,7 +819,7 @@
           <td>
             
             
-            <span class='code'># Inplace Versions</span>
+            <span class='code'>    @inline Tullio.anyone&#40;cond::Mask&#41; &#61; &#33;iszero&#40;cond.u&#41;</span>
           </td>
         </tr>
         <tr id='L79'>
@@ -815,7 +829,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L80'>
@@ -825,7 +839,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L81'>
@@ -835,7 +849,7 @@
           <td>
             
             
-            <span class='code'>    DiffEqBase.calculate_residuals&#33;&#40;out, ũ, u₀, u₁, α, ρ, thread&#61;False&#40;&#41;&#41;</span>
+            <span class='code'>&#61;#</span>
           </td>
         </tr>
         <tr id='L82'>
@@ -855,7 +869,7 @@
           <td>
             
             
-            <span class='code'>Save element-wise residuals</span>
+            <span class='code'>#&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61; storage unwrapper &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;#</span>
           </td>
         </tr>
         <tr id='L84'>
@@ -865,7 +879,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;math</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L85'>
@@ -875,7 +889,7 @@
           <td>
             
             
-            <span class='code'>\\frac&#123;ũ&#125;&#123;α&#43;\\max&#123;|u₀|,|u₁|&#125;*ρ&#125;</span>
+            <span class='code'>&quot;&quot;&quot;</span>
           </td>
         </tr>
         <tr id='L86'>
@@ -885,7 +899,7 @@
           <td>
             
             
-            <span class='code'>&#96;&#96;&#96;</span>
+            <span class='code'>    storage_type&#40;adjoint&#40;view&#40;A,...&#41;&#41;&#41; &#61;&#61; Array&#123;Int,2&#125;</span>
           </td>
         </tr>
         <tr id='L87'>
@@ -895,7 +909,7 @@
           <td>
             
             
-            <span class='code'>in &#96;out&#96;.</span>
+            <span class='code'>    storage_type&#40;A, B, C&#41; &#61;&#61; Array&#123;Int,N&#125; where N</span>
           </td>
         </tr>
         <tr id='L88'>
@@ -915,7 +929,7 @@
           <td>
             
             
-            <span class='code'>The argument &#96;thread&#96; determines whether internal broadcasting on</span>
+            <span class='code'>Recursively unwraps wrappers, and combines approximately with &#96;promote_type&#96;.</span>
           </td>
         </tr>
         <tr id='L90'>
@@ -925,7 +939,7 @@
           <td>
             
             
-            <span class='code'>appropriate CPU arrays should be serial &#40;&#96;thread &#61; False&#40;&#41;&#96;, default&#41;</span>
+            <span class='code'>&#40;Used as the trait to send CuArray to KernelAbstractions and Array&#123;Float or Int&#125;</span>
           </td>
         </tr>
         <tr id='L91'>
@@ -935,7 +949,7 @@
           <td>
             
             
-            <span class='code'>or use multiple threads &#40;&#96;thread &#61; True&#40;&#41;&#96;&#41; when Julia is started</span>
+            <span class='code'>to LoopVectorization.&#41;</span>
           </td>
         </tr>
         <tr id='L92'>
@@ -945,7 +959,7 @@
           <td>
             
             
-            <span class='code'>with multiple threads.</span>
+            <span class='code'>&quot;&quot;&quot;</span>
           </td>
         </tr>
         <tr id='L93'>
@@ -955,7 +969,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
+            <span class='code'>function storage_type&#40;A::AbstractArray&#41;</span>
           </td>
         </tr>
         <tr id='L94'>
@@ -965,7 +979,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#33;&#40;out, ũ, u₀, u₁, α, ρ, internalnorm, t,</span>
+            <span class='code'>    P &#61; parent&#40;A&#41;</span>
           </td>
         </tr>
         <tr id='L95'>
@@ -975,7 +989,7 @@
           <td>
             
             
-            <span class='code'>    thread::Union&#123;False, True&#125; &#61; False&#40;&#41;&#41;</span>
+            <span class='code'>    typeof&#40;A&#41; &#61;&#61;&#61; typeof&#40;P&#41; ? typeof&#40;A&#41; : storage_type&#40;P&#41;</span>
           </td>
         </tr>
         <tr id='L96'>
@@ -985,7 +999,7 @@
           <td>
             
             
-            <span class='code'>    @.. broadcast&#61;false thread&#61;thread out&#61;calculate_residuals&#40;ũ, u₀, u₁, α, ρ, internalnorm,</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L97'>
@@ -995,7 +1009,7 @@
           <td>
             
             
-            <span class='code'>        t&#41;</span>
+            <span class='code'>storage_type&#40;A&#41; &#61; typeof&#40;A&#41;</span>
           </td>
         </tr>
         <tr id='L98'>
@@ -1005,7 +1019,7 @@
           <td>
             
             
-            <span class='code'>    nothing</span>
+            <span class='code'>storage_type&#40;A, Bs...&#41; &#61; promote_storage&#40;storage_type&#40;A&#41;, storage_type&#40;Bs...&#41;&#41;</span>
           </td>
         </tr>
         <tr id='L99'>
@@ -1015,7 +1029,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>storage_type&#40;&#41; &#61; AbstractArray</span>
           </td>
         </tr>
         <tr id='L100'>
@@ -1035,7 +1049,7 @@
           <td>
             
             
-            <span class='code'>@inline function calculate_residuals&#33;&#40;out::Array, ũ::Array, u₀::Array, u₁::Array, α::Number,</span>
+            <span class='code'>promote_storage&#40;::Type&#123;A&#125;, ::Type&#123;B&#125;&#41; where &#123;A &lt;: Array&#123;T,N&#125;, B &lt;: Array&#123;S,M&#125;&#125; where &#123;T,N,S,M&#125; &#61;</span>
           </td>
         </tr>
         <tr id='L102'>
@@ -1045,59 +1059,27 @@
           <td>
             
             
-            <span class='code'>    ρ::Number, internalnorm::F, t, ::False&#41; where &#123;F&#125;</span>
+            <span class='code'>    N&#61;&#61;M ? Array&#123;promote_type&#40;T,S&#41;, N&#125; : Array&#123;promote_type&#40;T,S&#41;&#125;</span>
           </td>
         </tr>
         <tr id='L103'>
           <td class='lineno'>103</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>2 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              2 &#40;0 &#37;&#41;
-              samples spent in calculate_residuals&#33;
-              <br />
-              
-              2 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from perform_step&#33;
-              <a href='low_order_rk_perform_step.jl-9598a5e5672b0ee73762fff1a093dd1bc49866ad.html#L844'>line 844</a>
-              <br />
-            </div>
-            <div class='callees'>
-              2 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='simdloop.jl-fd98877eda4d37a8d0c771fde669510415adc7a4.html#L77'>macro expansion</a>
-              <br />
-            </div>
-            <span class='code'>    @inbounds @simd ivdep for i in eachindex&#40;out, ũ, u₀, u₁&#41;</span>
+            
+            
+            <span class='code'>promote_storage&#40;::Type&#123;A&#125;, ::Type&#123;B&#125;&#41; where &#123;A &lt;: Array&#123;T,N&#125;, B &lt;: AbstractRange&#123;S&#125;&#125; where &#123;T,N,S&#125; &#61;</span>
           </td>
         </tr>
         <tr id='L104'>
           <td class='lineno'>104</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>2 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              2 &#40;0 &#37;&#41;
-              samples spent in macro expansion
-              <br />
-              
-              2 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='simdloop.jl-fd98877eda4d37a8d0c771fde669510415adc7a4.html#L77'>line 77</a>
-              <br />
-            </div>
-            <div class='callees'>
-              1 &#40;50 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L1021'>setindex&#33;</a>
-              <br />
-              1 &#40;50 &#37;&#41;
-              samples spent calling
-              <a href='essentials.jl-6646314ef053cabc1fb0c7169141839960bb6d65.html#L13'>getindex</a>
-              <br />
-            </div>
-            <span class='code'>        out&#91;i&#93; &#61; calculate_residuals&#40;ũ&#91;i&#93;, u₀&#91;i&#93;, u₁&#91;i&#93;, α, ρ, internalnorm, t&#41;</span>
+            
+            
+            <span class='code'>    N&#61;&#61;1 ? Vector&#123;promote_type&#40;T,S&#41;&#125; : Array&#123;promote_type&#40;T,S&#41;&#125;</span>
           </td>
         </tr>
         <tr id='L105'>
@@ -1107,7 +1089,7 @@
           <td>
             
             
-            <span class='code'>    end</span>
+            <span class='code'>promote_storage&#40;::Type&#123;A&#125;, ::Type&#123;B&#125;&#41; where &#123;A &lt;: AbstractRange&#123;T&#125;, B &lt;: Array&#123;S,M&#125;&#125; where &#123;T,S,M&#125; &#61;</span>
           </td>
         </tr>
         <tr id='L106'>
@@ -1117,7 +1099,7 @@
           <td>
             
             
-            <span class='code'>    nothing</span>
+            <span class='code'>    M&#61;&#61;1 ? Vector&#123;promote_type&#40;T,S&#41;&#125; : Array&#123;promote_type&#40;T,S&#41;&#125;</span>
           </td>
         </tr>
         <tr id='L107'>
@@ -1127,7 +1109,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>promote_storage&#40;T, S&#41; &#61; promote_type&#40;T, S&#41;</span>
           </td>
         </tr>
         <tr id='L108'>
@@ -1147,377 +1129,7 @@
           <td>
             
             
-            <span class='code'>&quot;&quot;&quot;</span>
-          </td>
-        </tr>
-        <tr id='L110'>
-          <td class='lineno'>110</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    calculate_residuals&#33;&#40;out, u₀, u₁, α, ρ, thread&#61;False&#40;&#41;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L111'>
-          <td class='lineno'>111</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L112'>
-          <td class='lineno'>112</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>Save element-wise residuals</span>
-          </td>
-        </tr>
-        <tr id='L113'>
-          <td class='lineno'>113</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&#96;&#96;&#96;math</span>
-          </td>
-        </tr>
-        <tr id='L114'>
-          <td class='lineno'>114</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>\\frac&#123;u₁ - u₀&#125;&#123;α&#43;\\max&#123;|u₀|,|u₁|&#125;*ρ&#125;</span>
-          </td>
-        </tr>
-        <tr id='L115'>
-          <td class='lineno'>115</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&#96;&#96;&#96;</span>
-          </td>
-        </tr>
-        <tr id='L116'>
-          <td class='lineno'>116</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>in &#96;out&#96;.</span>
-          </td>
-        </tr>
-        <tr id='L117'>
-          <td class='lineno'>117</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L118'>
-          <td class='lineno'>118</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>The argument &#96;thread&#96; determines whether internal broadcasting on</span>
-          </td>
-        </tr>
-        <tr id='L119'>
-          <td class='lineno'>119</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>appropriate CPU arrays should be serial &#40;&#96;thread &#61; False&#40;&#41;&#96;, default&#41;</span>
-          </td>
-        </tr>
-        <tr id='L120'>
-          <td class='lineno'>120</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>or use multiple threads &#40;&#96;thread &#61; True&#40;&#41;&#96;&#41; when Julia is started</span>
-          </td>
-        </tr>
-        <tr id='L121'>
-          <td class='lineno'>121</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>with multiple threads.</span>
-          </td>
-        </tr>
-        <tr id='L122'>
-          <td class='lineno'>122</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&quot;&quot;&quot;</span>
-          </td>
-        </tr>
-        <tr id='L123'>
-          <td class='lineno'>123</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>@inline function calculate_residuals&#33;&#40;out, u₀, u₁, α, ρ, internalnorm, t,</span>
-          </td>
-        </tr>
-        <tr id='L124'>
-          <td class='lineno'>124</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    thread::Union&#123;False, True&#125; &#61; False&#40;&#41;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L125'>
-          <td class='lineno'>125</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    @.. broadcast&#61;false thread&#61;thread out&#61;calculate_residuals&#40;u₀, u₁, α, ρ, internalnorm, t&#41;</span>
-          </td>
-        </tr>
-        <tr id='L126'>
-          <td class='lineno'>126</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>end</span>
-          </td>
-        </tr>
-        <tr id='L127'>
-          <td class='lineno'>127</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L128'>
-          <td class='lineno'>128</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&quot;&quot;&quot;</span>
-          </td>
-        </tr>
-        <tr id='L129'>
-          <td class='lineno'>129</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    calculate_residuals&#33;&#40;out, E₁, E₂, u₀, u₁, α, ρ, δ, scalarnorm, thread&#61;False&#40;&#41;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L130'>
-          <td class='lineno'>130</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L131'>
-          <td class='lineno'>131</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>Calculate element-wise residuals</span>
-          </td>
-        </tr>
-        <tr id='L132'>
-          <td class='lineno'>132</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&#96;&#96;&#96;math</span>
-          </td>
-        </tr>
-        <tr id='L133'>
-          <td class='lineno'>133</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>\\frac&#123;δ E₁ &#43; E₂&#125;&#123;α&#43;\\max&#123;scalarnorm&#40;u₀&#41;,scalarnorm&#40;u₁&#41;&#125;*ρ&#125;.</span>
-          </td>
-        </tr>
-        <tr id='L134'>
-          <td class='lineno'>134</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&#96;&#96;&#96;</span>
-          </td>
-        </tr>
-        <tr id='L135'>
-          <td class='lineno'>135</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L136'>
-          <td class='lineno'>136</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>The argument &#96;thread&#96; determines whether internal broadcasting on</span>
-          </td>
-        </tr>
-        <tr id='L137'>
-          <td class='lineno'>137</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>appropriate CPU arrays should be serial &#40;&#96;thread &#61; False&#40;&#41;&#96;, default&#41;</span>
-          </td>
-        </tr>
-        <tr id='L138'>
-          <td class='lineno'>138</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>or use multiple threads &#40;&#96;thread &#61; True&#40;&#41;&#96;&#41; when Julia is started</span>
-          </td>
-        </tr>
-        <tr id='L139'>
-          <td class='lineno'>139</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>with multiple threads.</span>
-          </td>
-        </tr>
-        <tr id='L140'>
-          <td class='lineno'>140</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&quot;&quot;&quot;</span>
-          </td>
-        </tr>
-        <tr id='L141'>
-          <td class='lineno'>141</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>@inline function calculate_residuals&#33;&#40;out, E₁, E₂, u₀, u₁, α, ρ, δ, scalarnorm, t,</span>
-          </td>
-        </tr>
-        <tr id='L142'>
-          <td class='lineno'>142</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    thread::Union&#123;False, True&#125; &#61; False&#40;&#41;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L143'>
-          <td class='lineno'>143</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    @.. broadcast&#61;false thread&#61;thread out&#61;calculate_residuals&#40;E₁, E₂, u₀, u₁, α, ρ, δ,</span>
-          </td>
-        </tr>
-        <tr id='L144'>
-          <td class='lineno'>144</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>        scalarnorm, t&#41;</span>
-          </td>
-        </tr>
-        <tr id='L145'>
-          <td class='lineno'>145</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    out</span>
-          </td>
-        </tr>
-        <tr id='L146'>
-          <td class='lineno'>146</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>end</span>
+            <span class='code'>#&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61; fin &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;#</span>
           </td>
         </tr>
       </tbody>

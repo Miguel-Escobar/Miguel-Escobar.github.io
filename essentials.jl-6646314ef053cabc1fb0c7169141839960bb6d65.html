@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -150,48 +150,20 @@
         </tr>
         <tr id='L13'>
           <td class='lineno'>13</td>
-          <td class='tracecount excl'>4 &#40;0 &#37;&#41;</td>
-          <td class='tracecount incl'>4 &#40;0 &#37;&#41;</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              4 &#40;0 &#37;&#41;
-              samples spent in getindex
-              <br />
-              2 &#40;50 &#37;&#41; &#40;ex.&#41;,
-              2 &#40;50 &#37;&#41; &#40;incl.&#41;
-              when called from iterate
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L945'>line 945</a>
-              <br />
-              1 &#40;25 &#37;&#41; &#40;ex.&#41;,
-              1 &#40;25 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='FastBroadcast.jl-a89dd0c63d116df1fbb689a2601e911b45fd8669.html#L440'>line 440</a>
-              <br />
-              1 &#40;25 &#37;&#41; &#40;ex.&#41;,
-              1 &#40;25 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='calculate_residuals.jl-edcaf6875c81fd73decc5c0bbbf2b54bc95f8182.html#L104'>line 104</a>
-              <br />
-            </div>
+            
             
             <span class='code'>eval&#40;:&#40;getindex&#40;A::Array, i1::Int&#41; &#61; arrayref&#40;&#36;&#40;Expr&#40;:boundscheck&#41;&#41;, A, i1&#41;&#41;&#41;</span>
           </td>
         </tr>
         <tr id='L14'>
           <td class='lineno'>14</td>
-          <td class='tracecount excl'>1 &#40;0 &#37;&#41;</td>
-          <td class='tracecount incl'>1 &#40;0 &#37;&#41;</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              1 &#40;0 &#37;&#41;
-              samples spent in getindex
-              <br />
-              1 &#40;100 &#37;&#41; &#40;ex.&#41;,
-              1 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L917'>line 917</a>
-              <br />
-            </div>
+            
             
             <span class='code'>eval&#40;:&#40;getindex&#40;A::Array, i1::Int, i2::Int, I::Int...&#41; &#61; &#40;@inline; arrayref&#40;&#36;&#40;Expr&#40;:boundscheck&#41;&#41;, A, i1, i2, I...&#41;&#41;&#41;&#41;</span>
           </td>
@@ -8889,34 +8861,34 @@
         <tr id='L884'>
           <td class='lineno'>884</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>8606 &#40;200 &#37;&#41;</td>
+          <td class='tracecount incl'>82 &#40;200 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              12909 &#40;300 &#37;&#41;
+              123 &#40;300 &#37;&#41;
               samples spent in invokelatest
               <br />
               
-              4303 &#40;33 &#37;&#41; &#40;incl.&#41;
+              41 &#40;33 &#37;&#41; &#40;incl.&#41;
               when called from #inlineeval#74
               <a href='eval.jl-aaa7864799a574125840e5a72d7765be5c4d01cb.html#L263'>line 263</a>
               <br />
               
-              4303 &#40;33 &#37;&#41; &#40;incl.&#41;
+              41 &#40;33 &#37;&#41; &#40;incl.&#41;
               when called from #62
               <a href='eval.jl-aaa7864799a574125840e5a72d7765be5c4d01cb.html#L34'>line 34</a>
               <br />
               
-              4303 &#40;33 &#37;&#41; &#40;incl.&#41;
+              41 &#40;33 &#37;&#41; &#40;incl.&#41;
               when called from invokelatest
               <a href='essentials.jl-6646314ef053cabc1fb0c7169141839960bb6d65.html#L884'>line 884</a>
               <br />
             </div>
             <div class='callees'>
-              4303 &#40;50 &#37;&#41;
+              41 &#40;50 &#37;&#41;
               samples spent calling
               <a href='essentials.jl-6646314ef053cabc1fb0c7169141839960bb6d65.html#L887'>#invokelatest#2</a>
               <br />
-              4303 &#40;50 &#37;&#41;
+              41 &#40;50 &#37;&#41;
               samples spent calling
               <a href='essentials.jl-6646314ef053cabc1fb0c7169141839960bb6d65.html#L884'>#invokelatest#2</a>
               <br />
@@ -8947,24 +8919,24 @@
         <tr id='L887'>
           <td class='lineno'>887</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>8606 &#40;200 &#37;&#41;</td>
+          <td class='tracecount incl'>82 &#40;200 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              4303 &#40;100 &#37;&#41;
+              41 &#40;100 &#37;&#41;
               samples spent in #invokelatest#2
               <br />
               
-              4303 &#40;100 &#37;&#41; &#40;incl.&#41;
+              41 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from invokelatest
               <a href='essentials.jl-6646314ef053cabc1fb0c7169141839960bb6d65.html#L884'>line 884</a>
               <br />
             </div>
             <div class='callees'>
-              4303 &#40;50 &#37;&#41;
+              41 &#40;50 &#37;&#41;
               samples spent calling
               <a href='loading.jl-287e0cd1a4f312e09d6dcac96a27d509274c7f13.html#L2080'>include_string</a>
               <br />
-              4303 &#40;50 &#37;&#41;
+              41 &#40;50 &#37;&#41;
               samples spent calling
               <a href='eval.jl-aaa7864799a574125840e5a72d7765be5c4d01cb.html#L126'>#64</a>
               <br />

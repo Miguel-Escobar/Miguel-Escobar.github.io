@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -35,7 +35,7 @@
           <td>
             
             
-            <span class='code'># include&#40;&quot;src/network_matrices_creation.jl&quot;&#41;</span>
+            <span class='code'>include&#40;&quot;src/network_matrices_creation.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L2'>
@@ -45,7 +45,7 @@
           <td>
             
             
-            <span class='code'># include&#40;&quot;src/network_simulation.jl&quot;&#41;</span>
+            <span class='code'>include&#40;&quot;src/network_simulation.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L3'>
@@ -55,7 +55,7 @@
           <td>
             
             
-            <span class='code'># include&#40;&quot;src/network_sol_analysis.jl&quot;&#41;</span>
+            <span class='code'>include&#40;&quot;src/network_sol_analysis.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L4'>
@@ -65,7 +65,7 @@
           <td>
             
             
-            <span class='code'># using BenchmarkTools</span>
+            <span class='code'>using StatProfilerHTML</span>
           </td>
         </tr>
         <tr id='L5'>
@@ -75,7 +75,7 @@
           <td>
             
             
-            <span class='code'># N &#61; 175</span>
+            <span class='code'>using BenchmarkTools</span>
           </td>
         </tr>
         <tr id='L6'>
@@ -85,7 +85,7 @@
           <td>
             
             
-            <span class='code'># eps &#61; 0.05</span>
+            <span class='code'>N &#61; 90</span>
           </td>
         </tr>
         <tr id='L7'>
@@ -95,7 +95,7 @@
           <td>
             
             
-            <span class='code'># a &#61; 0.5</span>
+            <span class='code'>eps &#61; 0.05</span>
           </td>
         </tr>
         <tr id='L8'>
@@ -105,7 +105,7 @@
           <td>
             
             
-            <span class='code'># b &#61; bmatrix&#40;pi/2-0.1, eps&#41;</span>
+            <span class='code'>a &#61; 0.5</span>
           </td>
         </tr>
         <tr id='L9'>
@@ -115,7 +115,7 @@
           <td>
             
             
-            <span class='code'># σ &#61; 0.0506</span>
+            <span class='code'>b &#61; bmatrix&#40;pi/2-0.1, eps&#41;</span>
           </td>
         </tr>
         <tr id='L10'>
@@ -125,7 +125,7 @@
           <td>
             
             
-            <span class='code'># G &#61; wattsstrogatzmatrix&#40;N, 3, 1&#41;;#0.232&#41;</span>
+            <span class='code'>σ &#61; 0.0506</span>
           </td>
         </tr>
         <tr id='L11'>
@@ -135,7 +135,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>G &#61; wattsstrogatzmatrix&#40;N, 3, 1&#41;;#0.232&#41;</span>
           </td>
         </tr>
         <tr id='L12'>
@@ -145,7 +145,7 @@
           <td>
             
             
-            <span class='code'># x_0 &#61; zeros&#40;2*N&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L13'>
@@ -155,7 +155,7 @@
           <td>
             
             
-            <span class='code'># x_0&#91;2 .* &#40;1:N&#41; .- 1&#93; &#61; rand&#40;N&#41; .* 2 .* a .- a</span>
+            <span class='code'>x_0 &#61; zeros&#40;2*N&#41;</span>
           </td>
         </tr>
         <tr id='L14'>
@@ -165,7 +165,7 @@
           <td>
             
             
-            <span class='code'># x_0&#91;2 .* &#40;1:N&#41;&#93; &#61; rand&#40;N&#41; .* 2 .* &#40;-a &#43; a^3 / 3&#41; .- &#40;-a &#43; a^3 / 3&#41;</span>
+            <span class='code'>x_0&#91;2 .* &#40;1:N&#41; .- 1&#93; &#61; rand&#40;N&#41; .* 2 .* a .- a</span>
           </td>
         </tr>
         <tr id='L15'>
@@ -175,7 +175,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>x_0&#91;2 .* &#40;1:N&#41;&#93; &#61; rand&#40;N&#41; .* 2 .* &#40;-a &#43; a^3 / 3&#41; .- &#40;-a &#43; a^3 / 3&#41;</span>
           </td>
         </tr>
         <tr id='L16'>
@@ -185,7 +185,7 @@
           <td>
             
             
-            <span class='code'># dx &#61; zeros&#40;2*N&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L17'>
@@ -195,7 +195,7 @@
           <td>
             
             
-            <span class='code'># coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41;</span>
+            <span class='code'># cache &#61; zeros&#40;Float64, N, 2&#41;</span>
           </td>
         </tr>
         <tr id='L18'>
@@ -205,7 +205,7 @@
           <td>
             
             
-            <span class='code'># x_0&#91;2 .* &#40;1:N&#41; .- 1&#93; &#61; rand&#40;N&#41; .* 2 .* a .- a</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L19'>
@@ -215,7 +215,7 @@
           <td>
             
             
-            <span class='code'># x_0&#91;2 .* &#40;1:N&#41;&#93; &#61; rand&#40;N&#41; .* 2 .* &#40;-a &#43; a^3 / 3&#41; .- &#40;-a &#43; a^3 / 3&#41;</span>
+            <span class='code'>dx &#61; zeros&#40;2*N&#41;</span>
           </td>
         </tr>
         <tr id='L20'>
@@ -225,7 +225,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41;</span>
           </td>
         </tr>
         <tr id='L21'>
@@ -235,7 +235,7 @@
           <td>
             
             
-            <span class='code'># @profview for i in 1:1000000 coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41; end</span>
+            <span class='code'>x_0&#91;2 .* &#40;1:N&#41; .- 1&#93; &#61; rand&#40;N&#41; .* 2 .* a .- a</span>
           </td>
         </tr>
         <tr id='L22'>
@@ -245,7 +245,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>x_0&#91;2 .* &#40;1:N&#41;&#93; &#61; rand&#40;N&#41; .* 2 .* &#40;-a &#43; a^3 / 3&#41; .- &#40;-a &#43; a^3 / 3&#41;</span>
           </td>
         </tr>
         <tr id='L23'>
@@ -255,7 +255,7 @@
           <td>
             
             
-            <span class='code'># @btime coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L24'>
@@ -265,17 +265,31 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>@profview for i in 1:10000 coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41; end</span>
           </td>
         </tr>
         <tr id='L25'>
           <td class='lineno'>25</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
+          <td class='tracecount excl'>1 &#40;2 &#37;&#41;</td>
+          <td class='tracecount incl'>41 &#40;100 &#37;&#41;</td>
           <td>
-            
-            
-            <span class='code'>using DifferentialEquations</span>
+            <div class='call-sites'>
+              41 &#40;100 &#37;&#41;
+              samples spent in macro expansion
+              <br />
+              1 &#40;2 &#37;&#41; &#40;ex.&#41;,
+              41 &#40;100 &#37;&#41; &#40;incl.&#41;
+              when called from macro expansion
+              <a href='Profile.jl-6601ef08cf13ac60d4d4c29afdb17d7f521badcb.html#L27'>line 27</a>
+              <br />
+            </div>
+            <div class='callees'>
+              40 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='network_simulation.jl-da677586bea67a4da08172c7d6f32e5ec977f286.html#L20'>coupled_fhn_eom&#33;</a>
+              <br />
+            </div>
+            <span class='code'>@profilehtml for i in 1:10000 coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41; end</span>
           </td>
         </tr>
         <tr id='L26'>
@@ -285,7 +299,7 @@
           <td>
             
             
-            <span class='code'>using StaticArrays</span>
+            <span class='code'>@benchmark coupled_fhn_eom&#33;&#40;dx, x_0, a, eps, σ, G, b&#41;</span>
           </td>
         </tr>
         <tr id='L27'>
@@ -295,706 +309,7 @@
           <td>
             
             
-            <span class='code'>using Einsum</span>
-          </td>
-        </tr>
-        <tr id='L28'>
-          <td class='lineno'>28</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>using Random</span>
-          </td>
-        </tr>
-        <tr id='L29'>
-          <td class='lineno'>29</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>using Graphs</span>
-          </td>
-        </tr>
-        <tr id='L30'>
-          <td class='lineno'>30</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>using LinearAlgebra</span>
-          </td>
-        </tr>
-        <tr id='L31'>
-          <td class='lineno'>31</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>using StatProfilerHTML</span>
-          </td>
-        </tr>
-        <tr id='L32'>
-          <td class='lineno'>32</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
             <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L33'>
-          <td class='lineno'>33</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>function wattsstrogatzmatrix&#40;size, neighbors, rewiring_prob&#41;</span>
-          </td>
-        </tr>
-        <tr id='L34'>
-          <td class='lineno'>34</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    g &#61; watts_strogatz&#40;size, 2*neighbors, rewiring_prob&#41;</span>
-          </td>
-        </tr>
-        <tr id='L35'>
-          <td class='lineno'>35</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    coupling_matrix &#61; adjacency_matrix&#40;g&#41;</span>
-          </td>
-        </tr>
-        <tr id='L36'>
-          <td class='lineno'>36</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    coupling_matrix &#61; Matrix&#40;coupling_matrix&#41;</span>
-          </td>
-        </tr>
-        <tr id='L37'>
-          <td class='lineno'>37</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    coupling_matrix &#61; coupling_matrix - Diagonal&#40;vec&#40;sum&#40;coupling_matrix, dims&#61;2&#41;&#41;&#41; # Ensure zero row sum</span>
-          </td>
-        </tr>
-        <tr id='L38'>
-          <td class='lineno'>38</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    return -coupling_matrix</span>
-          </td>
-        </tr>
-        <tr id='L39'>
-          <td class='lineno'>39</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>end</span>
-          </td>
-        </tr>
-        <tr id='L40'>
-          <td class='lineno'>40</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L41'>
-          <td class='lineno'>41</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>function fhn_eom&#40;x, params&#41;</span>
-          </td>
-        </tr>
-        <tr id='L42'>
-          <td class='lineno'>42</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    a &#61; params&#91;1&#93;</span>
-          </td>
-        </tr>
-        <tr id='L43'>
-          <td class='lineno'>43</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    eps &#61; params&#91;2&#93;</span>
-          </td>
-        </tr>
-        <tr id='L44'>
-          <td class='lineno'>44</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>2 &#40;0 &#37;&#41;</td>
-          <td>
-            <div class='call-sites'>
-              2 &#40;0 &#37;&#41;
-              samples spent in fhn_eom
-              <br />
-              
-              2 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from coupled_fhn_eom&#33;
-              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L63'>line 63</a>
-              <br />
-            </div>
-            <div class='callees'>
-              1 &#40;50 &#37;&#41;
-              samples spent calling
-              <a href='intfuncs.jl-b05b9abfee69da39b733533c8ea15423eac19cf0.html#L333'>literal_pow</a>
-              <br />
-              1 &#40;50 &#37;&#41;
-              samples spent calling
-              <a href='promotion.jl-380503680cc0c7281fbd5aa50c7efc69aec9004d.html#L425'>/</a>
-              <br />
-            </div>
-            <span class='code'>    dx &#61; &#40;x&#91;1&#93; - &#40;x&#91;1&#93;^3&#41;/3 - x&#91;2&#93;&#41;/eps</span>
-          </td>
-        </tr>
-        <tr id='L45'>
-          <td class='lineno'>45</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    dy &#61; x&#91;1&#93; &#43; a</span>
-          </td>
-        </tr>
-        <tr id='L46'>
-          <td class='lineno'>46</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    return SVector&#123;2&#125;&#40;dx, dy&#41;</span>
-          </td>
-        </tr>
-        <tr id='L47'>
-          <td class='lineno'>47</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>end</span>
-          </td>
-        </tr>
-        <tr id='L48'>
-          <td class='lineno'>48</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L49'>
-          <td class='lineno'>49</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>function bmatrix&#40;phi, eps&#41;</span>
-          </td>
-        </tr>
-        <tr id='L50'>
-          <td class='lineno'>50</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    return -&#91;cos&#40;phi&#41;/eps sin&#40;phi&#41;/eps; -sin&#40;phi&#41; cos&#40;phi&#41;&#93;</span>
-          </td>
-        </tr>
-        <tr id='L51'>
-          <td class='lineno'>51</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    #return SArray&#123;Tuple&#123;2,2&#125;&#125;&#40;-cos&#40;phi&#41;/eps, sin&#40;phi&#41;/eps, -sin&#40;phi&#41;/eps, -cos&#40;phi&#41;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L52'>
-          <td class='lineno'>52</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>end</span>
-          </td>
-        </tr>
-        <tr id='L53'>
-          <td class='lineno'>53</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L54'>
-          <td class='lineno'>54</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            <div class='call-sites'>
-              4096 &#40;95 &#37;&#41;
-              samples spent in coupled_fhn_eom&#33;
-              <br />
-              4 &#40;0 &#37;&#41; &#40;ex.&#41;,
-              4096 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from #17
-              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L81'>line 81</a>
-              <br />
-            </div>
-            
-            <span class='code'>function coupled_fhn_eom&#33;&#40;dx, x, a, eps, coupling_strength, coupling_matrix, b&#41;</span>
-          </td>
-        </tr>
-        <tr id='L55'>
-          <td class='lineno'>55</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>48 &#40;1 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              48 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='abstractarray.jl-ae9f9139c27e09a84b5f353b532336912dbcf7cf.html#L1288'>getindex</a>
-              <br />
-            </div>
-            <span class='code'>    N &#61; length&#40;coupling_matrix&#91;1, :&#93;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L56'>
-          <td class='lineno'>56</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>24 &#40;1 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              24 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='reshapedarray.jl-64fd89425735b884d66ac44786074157bf164ffe.html#L51'>reshape</a>
-              <br />
-            </div>
-            <span class='code'>    eachneuron &#61; reshape&#40;x, &#40;2, N&#41;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L57'>
-          <td class='lineno'>57</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>50 &#40;1 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              50 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L111'>*</a>
-              <br />
-            </div>
-            <span class='code'>    coupling_terms &#61; b * eachneuron</span>
-          </td>
-        </tr>
-        <tr id='L58'>
-          <td class='lineno'>58</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>3111 &#40;72 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              2409 &#40;77 &#37;&#41;
-              samples spent calling
-              <a href='Einsum.jl-240ef19ca9679e2b890b910276efff9a2bf36c94.html#L279'>macro expansion</a>
-              <br />
-              625 &#40;20 &#37;&#41;
-              samples spent calling
-              <a href='Einsum.jl-240ef19ca9679e2b890b910276efff9a2bf36c94.html#L278'>macro expansion</a>
-              <br />
-              69 &#40;2 &#37;&#41;
-              samples spent calling
-              <a href='Einsum.jl-240ef19ca9679e2b890b910276efff9a2bf36c94.html#L208'>macro expansion</a>
-              <br />
-              8 &#40;0 &#37;&#41;
-              samples spent calling
-              <a href='Einsum.jl-240ef19ca9679e2b890b910276efff9a2bf36c94.html#L0'>macro expansion</a>
-              <br />
-            </div>
-            <span class='code'>    @einsum coupling&#91;i, j&#93; :&#61; coupling_matrix&#91;i, r&#93; * coupling_terms&#91;j, r&#93;</span>
-          </td>
-        </tr>
-        <tr id='L59'>
-          <td class='lineno'>59</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    eom_params &#61; SVector&#123;2&#125;&#40;a, eps&#41;</span>
-          </td>
-        </tr>
-        <tr id='L60'>
-          <td class='lineno'>60</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    for i in range&#40;1, N&#41;</span>
-          </td>
-        </tr>
-        <tr id='L61'>
-          <td class='lineno'>61</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>1 &#40;0 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              1 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='subarray.jl-d0d556f99db28fe7c61d0653e9d3360b7e5f8969.html#L179'>view</a>
-              <br />
-            </div>
-            <span class='code'>        thisneuron &#61; @view eachneuron&#91;:, i&#93;</span>
-          </td>
-        </tr>
-        <tr id='L62'>
-          <td class='lineno'>62</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>1 &#40;0 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              1 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='subarray.jl-d0d556f99db28fe7c61d0653e9d3360b7e5f8969.html#L179'>view</a>
-              <br />
-            </div>
-            <span class='code'>        thiscoupling &#61; @view coupling&#91;i, :&#93;</span>
-          </td>
-        </tr>
-        <tr id='L63'>
-          <td class='lineno'>63</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>758 &#40;18 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              747 &#40;99 &#37;&#41;
-              samples spent calling
-              <a href='broadcast.jl-ec78b01a937a5f485a43b2075237494697b739cc.html#L903'>materialize</a>
-              <br />
-              9 &#40;1 &#37;&#41;
-              samples spent calling
-              <a href='broadcast.jl-d0bd897cd38337cc355198b255121d871389f695.html#L0'>materialize</a>
-              <br />
-              2 &#40;0 &#37;&#41;
-              samples spent calling
-              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L44'>fhn_eom</a>
-              <br />
-            </div>
-            <span class='code'>        dx_i::SVector&#123;2,Float64&#125; &#61; fhn_eom&#40;thisneuron, eom_params&#41; .&#43; coupling_strength .* thiscoupling</span>
-          </td>
-        </tr>
-        <tr id='L64'>
-          <td class='lineno'>64</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>        # dx_i &#61; fhn_eom&#40;eachneuron&#91;:, i&#93;, eom_params&#41; .&#43; coupling_strength .* coupling&#91;i, :&#93;</span>
-          </td>
-        </tr>
-        <tr id='L65'>
-          <td class='lineno'>65</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'>99 &#40;2 &#37;&#41;</td>
-          <td>
-            
-            <div class='callees'>
-              77 &#40;78 &#37;&#41;
-              samples spent calling
-              <a href='range.jl-3cb7d87d5756058b8423e9126dc85e84dff43b0f.html#L5'>Colon</a>
-              <br />
-              9 &#40;9 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L0'>setindex&#33;</a>
-              <br />
-              5 &#40;5 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L1034'>setindex&#33;</a>
-              <br />
-              4 &#40;4 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L1043'>setindex&#33;</a>
-              <br />
-              3 &#40;3 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L1041'>setindex&#33;</a>
-              <br />
-              1 &#40;1 &#37;&#41;
-              samples spent calling
-              <a href='int.jl-71ebdca84c06e5b2240a878b2d6e23746b965d4d.html#L88'>*</a>
-              <br />
-            </div>
-            <span class='code'>        dx&#91;2*i-1:2*i&#93; &#61; dx_i</span>
-          </td>
-        </tr>
-        <tr id='L66'>
-          <td class='lineno'>66</td>
-          <td class='tracecount excl'>4 &#40;0 &#37;&#41;</td>
-          <td class='tracecount incl'>4 &#40;0 &#37;&#41;</td>
-          <td>
-            
-            
-            <span class='code'>    end</span>
-          </td>
-        </tr>
-        <tr id='L67'>
-          <td class='lineno'>67</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>    nothing</span>
-          </td>
-        </tr>
-        <tr id='L68'>
-          <td class='lineno'>68</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>end</span>
-          </td>
-        </tr>
-        <tr id='L69'>
-          <td class='lineno'>69</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L70'>
-          <td class='lineno'>70</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>N &#61; 175</span>
-          </td>
-        </tr>
-        <tr id='L71'>
-          <td class='lineno'>71</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>eps &#61; 0.05</span>
-          </td>
-        </tr>
-        <tr id='L72'>
-          <td class='lineno'>72</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>a &#61; 0.5</span>
-          </td>
-        </tr>
-        <tr id='L73'>
-          <td class='lineno'>73</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>b &#61; bmatrix&#40;pi/2-0.1, eps&#41;</span>
-          </td>
-        </tr>
-        <tr id='L74'>
-          <td class='lineno'>74</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>σ &#61; 0.0506</span>
-          </td>
-        </tr>
-        <tr id='L75'>
-          <td class='lineno'>75</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>G &#61; wattsstrogatzmatrix&#40;N, 3, 1&#41;;#0.232&#41;</span>
-          </td>
-        </tr>
-        <tr id='L76'>
-          <td class='lineno'>76</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L77'>
-          <td class='lineno'>77</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>x_0 &#61; zeros&#40;2*N&#41;</span>
-          </td>
-        </tr>
-        <tr id='L78'>
-          <td class='lineno'>78</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>x_0&#91;2 .* &#40;1:N&#41; .- 1&#93; &#61; rand&#40;N&#41; .* 2 .* a .- a</span>
-          </td>
-        </tr>
-        <tr id='L79'>
-          <td class='lineno'>79</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>x_0&#91;2 .* &#40;1:N&#41;&#93; &#61; rand&#40;N&#41; .* 2 .* &#40;-a &#43; a^3 / 3&#41; .- &#40;-a &#43; a^3 / 3&#41;</span>
-          </td>
-        </tr>
-        <tr id='L80'>
-          <td class='lineno'>80</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L81'>
-          <td class='lineno'>81</td>
-          <td class='tracecount excl'>32 &#40;1 &#37;&#41;</td>
-          <td class='tracecount incl'>4134 &#40;96 &#37;&#41;</td>
-          <td>
-            <div class='call-sites'>
-              4134 &#40;96 &#37;&#41;
-              samples spent in #17
-              <br />
-              32 &#40;1 &#37;&#41; &#40;ex.&#41;,
-              4134 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from Void
-              <a href='utils.jl-f2f16f4555a4700558488a33258238c24e79a60f.html#L481'>line 481</a>
-              <br />
-            </div>
-            <div class='callees'>
-              4096 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L54'>coupled_fhn_eom&#33;</a>
-              <br />
-              5 &#40;0 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L54'>coupled_fhn_eom&#33;</a>
-              <br />
-              1 &#40;0 &#37;&#41;
-              samples spent calling
-              <a href='typeinfer.jl-8e4b85001ffd72fbf4d74221dddacb171abdc21a.html#L1078'>typeinf_ext_toplevel</a>
-              <br />
-            </div>
-            <span class='code'>prob &#61; ODEProblem&#40;&#40;dx, x, params, t&#41; -&gt; coupled_fhn_eom&#33;&#40;dx, x, params&#91;1&#93;, params&#91;2&#93;, params&#91;3&#93;, G, b&#41;, x_0, &#40;0.0, 1000.0&#41;, &#91;a, eps, σ&#93;&#41;</span>
-          </td>
-        </tr>
-        <tr id='L82'>
-          <td class='lineno'>82</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>#sol &#61; solve&#40;prob&#41;;</span>
-          </td>
-        </tr>
-        <tr id='L83'>
-          <td class='lineno'>83</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L84'>
-          <td class='lineno'>84</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>@profilehtml solve&#40;prob&#41;</span>
           </td>
         </tr>
       </tbody>

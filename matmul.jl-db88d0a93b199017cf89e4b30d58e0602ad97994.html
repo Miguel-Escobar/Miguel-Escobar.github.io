@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:47:44
       </div>
     </div>
     <table>
@@ -1134,13 +1134,13 @@
           <td class='tracecount incl'></td>
           <td>
             <div class='call-sites'>
-              50 &#40;1 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in *
               <br />
               
-              50 &#40;100 &#37;&#41; &#40;incl.&#41;
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from coupled_fhn_eom&#33;
-              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L57'>line 57</a>
+              <a href='network_simulation.jl-da677586bea67a4da08172c7d6f32e5ec977f286.html#L23'>line 23</a>
               <br />
             </div>
             
@@ -1160,17 +1160,13 @@
         <tr id='L113'>
           <td class='lineno'>113</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>50 &#40;1 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             
             <div class='callees'>
-              37 &#40;74 &#37;&#41;
+              1 &#40;100 &#37;&#41;
               samples spent calling
               <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L420'>similar</a>
-              <br />
-              13 &#40;26 &#37;&#41;
-              samples spent calling
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L237'>mul&#33;</a>
               <br />
             </div>
             <span class='code'>    mul&#33;&#40;similar&#40;B, TS, &#40;size&#40;A, 1&#41;, size&#40;B, 2&#41;&#41;&#41;,</span>
@@ -2409,24 +2405,10 @@
         <tr id='L237'>
           <td class='lineno'>237</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>13 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              13 &#40;0 &#37;&#41;
-              samples spent in mul&#33;
-              <br />
-              
-              13 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from *
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L113'>line 113</a>
-              <br />
-            </div>
-            <div class='callees'>
-              13 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L263'>mul&#33;</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>    return mul&#33;&#40;C, A, B, true, false&#41;</span>
           </td>
         </tr>
@@ -2683,24 +2665,10 @@
         <tr id='L263'>
           <td class='lineno'>263</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>13 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              13 &#40;0 &#37;&#41;
-              samples spent in mul&#33;
-              <br />
-              
-              13 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from mul&#33;
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L237'>line 237</a>
-              <br />
-            </div>
-            <div class='callees'>
-              13 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L352'>generic_matmatmul&#33;</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>@inline mul&#33;&#40;C::AbstractMatrix, A::AbstractVecOrMat, B::AbstractVecOrMat, α::Number, β::Number&#41; &#61;</span>
           </td>
         </tr>
@@ -3587,24 +3555,10 @@
         <tr id='L352'>
           <td class='lineno'>352</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>13 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              13 &#40;0 &#37;&#41;
-              samples spent in generic_matmatmul&#33;
-              <br />
-              
-              13 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from mul&#33;
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L263'>line 263</a>
-              <br />
-            </div>
-            <div class='callees'>
-              13 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L570'>gemm_wrapper&#33;</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>            return gemm_wrapper&#33;&#40;C, tA, tB, A, B, _add&#41;</span>
           </td>
         </tr>
@@ -5783,16 +5737,7 @@
           <td class='tracecount excl'></td>
           <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              13 &#40;0 &#37;&#41;
-              samples spent in gemm_wrapper&#33;
-              <br />
-              
-              13 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from generic_matmatmul&#33;
-              <a href='matmul.jl-db88d0a93b199017cf89e4b30d58e0602ad97994.html#L352'>line 352</a>
-              <br />
-            </div>
+            
             
             <span class='code'>function gemm_wrapper&#33;&#40;C::StridedVecOrMat&#123;T&#125;, tA::AbstractChar, tB::AbstractChar,</span>
           </td>
@@ -6140,15 +6085,10 @@
         <tr id='L605'>
           <td class='lineno'>605</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>13 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
             
-            <div class='callees'>
-              13 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='blas.jl-6626febb77b2326378f154c4dbfb8fefeed6b29e.html#L1505'>gemm&#33;</a>
-              <br />
-            </div>
+            
             <span class='code'>        return BLAS.gemm&#33;&#40;tA, tB, alpha, A, B, beta, C&#41;</span>
           </td>
         </tr>

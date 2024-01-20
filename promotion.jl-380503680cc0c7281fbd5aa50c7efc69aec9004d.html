@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -3721,20 +3721,20 @@
         <tr id='L370'>
           <td class='lineno'>370</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>514 &#40;12 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              514 &#40;12 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in _promote
               <br />
               
-              514 &#40;100 &#37;&#41; &#40;incl.&#41;
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from promote
               <a href='promotion.jl-380503680cc0c7281fbd5aa50c7efc69aec9004d.html#L393'>line 393</a>
               <br />
             </div>
             <div class='callees'>
-              514 &#40;100 &#37;&#41;
+              1 &#40;100 &#37;&#41;
               samples spent calling
               <a href='number.jl-d1ef8ab1d5c0b29385882b4ae9d936a5f81f96cb.html#L7'>convert</a>
               <br />
@@ -3965,20 +3965,20 @@
         <tr id='L393'>
           <td class='lineno'>393</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>514 &#40;12 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              514 &#40;12 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in promote
               <br />
               
-              514 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from *
-              <a href='promotion.jl-380503680cc0c7281fbd5aa50c7efc69aec9004d.html#L423'>line 423</a>
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
+              when called from mul_fast
+              <a href='fastmath.jl-37b35e4053db900bfbc018b8051e123080b79645.html#L266'>line 266</a>
               <br />
             </div>
             <div class='callees'>
-              514 &#40;100 &#37;&#41;
+              1 &#40;100 &#37;&#41;
               samples spent calling
               <a href='promotion.jl-380503680cc0c7281fbd5aa50c7efc69aec9004d.html#L370'>_promote</a>
               <br />
@@ -4279,28 +4279,10 @@
         <tr id='L423'>
           <td class='lineno'>423</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>565 &#40;13 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              565 &#40;13 &#37;&#41;
-              samples spent in *
-              <br />
-              
-              565 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='Einsum.jl-240ef19ca9679e2b890b910276efff9a2bf36c94.html#L278'>line 278</a>
-              <br />
-            </div>
-            <div class='callees'>
-              514 &#40;91 &#37;&#41;
-              samples spent calling
-              <a href='promotion.jl-380503680cc0c7281fbd5aa50c7efc69aec9004d.html#L393'>promote</a>
-              <br />
-              51 &#40;9 &#37;&#41;
-              samples spent calling
-              <a href='float.jl-8b3b3bb14d428023b475bd891d5d46618d9d9908.html#L411'>*</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>*&#40;x::Number, y::Number&#41; &#61; *&#40;promote&#40;x,y&#41;...&#41;</span>
           </td>
         </tr>
@@ -4317,24 +4299,10 @@
         <tr id='L425'>
           <td class='lineno'>425</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>1 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              1 &#40;0 &#37;&#41;
-              samples spent in /
-              <br />
-              
-              1 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from fhn_eom
-              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L44'>line 44</a>
-              <br />
-            </div>
-            <div class='callees'>
-              1 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='float.jl-8b3b3bb14d428023b475bd891d5d46618d9d9908.html#L412'>/</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>/&#40;x::Number, y::Number&#41; &#61; /&#40;promote&#40;x,y&#41;...&#41;</span>
           </td>
         </tr>
@@ -5290,22 +5258,17 @@
         </tr>
         <tr id='L521'>
           <td class='lineno'>521</td>
-          <td class='tracecount excl'>239 &#40;6 &#37;&#41;</td>
-          <td class='tracecount incl'>239 &#40;6 &#37;&#41;</td>
+          <td class='tracecount excl'>23 &#40;56 &#37;&#41;</td>
+          <td class='tracecount incl'>23 &#40;56 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              239 &#40;6 &#37;&#41;
+              23 &#40;56 &#37;&#41;
               samples spent in &#61;&#61;
               <br />
-              238 &#40;100 &#37;&#41; &#40;ex.&#41;,
-              238 &#40;100 &#37;&#41; &#40;incl.&#41;
+              23 &#40;100 &#37;&#41; &#40;ex.&#41;,
+              23 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from iterate
               <a href='range.jl-3cb7d87d5756058b8423e9126dc85e84dff43b0f.html#L901'>line 901</a>
-              <br />
-              1 &#40;0 &#37;&#41; &#40;ex.&#41;,
-              1 &#40;0 &#37;&#41; &#40;incl.&#41;
-              when called from &#33;&#61;
-              <a href='operators.jl-824bcf87756874b0eecf20325acaebfd7ab8374f.html#L276'>line 276</a>
               <br />
             </div>
             

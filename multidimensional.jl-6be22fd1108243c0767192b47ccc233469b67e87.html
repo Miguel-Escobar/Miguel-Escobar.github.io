@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -8911,24 +8911,20 @@
         <tr id='L889'>
           <td class='lineno'>889</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>48 &#40;1 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              48 &#40;1 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in _getindex
               <br />
               
-              48 &#40;100 &#37;&#41; &#40;incl.&#41;
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from getindex
               <a href='abstractarray.jl-ae9f9139c27e09a84b5f353b532336912dbcf7cf.html#L1288'>line 1288</a>
               <br />
             </div>
             <div class='callees'>
-              35 &#40;73 &#37;&#41;
-              samples spent calling
-              <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L903'>_unsafe_getindex</a>
-              <br />
-              13 &#40;27 &#37;&#41;
+              1 &#40;100 &#37;&#41;
               samples spent calling
               <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L901'>_unsafe_getindex</a>
               <br />
@@ -9049,20 +9045,20 @@
         <tr id='L901'>
           <td class='lineno'>901</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>13 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              13 &#40;0 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in _unsafe_getindex
               <br />
               
-              13 &#40;100 &#37;&#41; &#40;incl.&#41;
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from _getindex
               <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L889'>line 889</a>
               <br />
             </div>
             <div class='callees'>
-              13 &#40;100 &#37;&#41;
+              1 &#40;100 &#37;&#41;
               samples spent calling
               <a href='abstractarray.jl-ae9f9139c27e09a84b5f353b532336912dbcf7cf.html#L828'>similar</a>
               <br />
@@ -9083,24 +9079,10 @@
         <tr id='L903'>
           <td class='lineno'>903</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>35 &#40;1 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              35 &#40;1 &#37;&#41;
-              samples spent in _unsafe_getindex
-              <br />
-              
-              35 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from _getindex
-              <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L889'>line 889</a>
-              <br />
-            </div>
-            <div class='callees'>
-              35 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L912'>_unsafe_getindex&#33;</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>    _unsafe_getindex&#33;&#40;dest, A, I...&#41; # usually a generated function, don&#39;t allow it to impact inference result</span>
           </td>
         </tr>
@@ -9187,24 +9169,10 @@
         <tr id='L912'>
           <td class='lineno'>912</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>35 &#40;1 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              35 &#40;1 &#37;&#41;
-              samples spent in _unsafe_getindex&#33;
-              <br />
-              
-              35 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from _unsafe_getindex
-              <a href='multidimensional.jl-6be22fd1108243c0767192b47ccc233469b67e87.html#L903'>line 903</a>
-              <br />
-            </div>
-            <div class='callees'>
-              35 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='cartesian.jl-43670565a5d33b50703b7873d7a94f9c7762342a.html#L64'>macro expansion</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>        @inbounds @nloops &#36;N j d-&gt;I&#91;d&#93; begin</span>
           </td>
         </tr>
@@ -9251,52 +9219,20 @@
         <tr id='L917'>
           <td class='lineno'>917</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>30 &#40;1 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              30 &#40;1 &#37;&#41;
-              samples spent in macro expansion
-              <br />
-              
-              30 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='cartesian.jl-43670565a5d33b50703b7873d7a94f9c7762342a.html#L64'>line 64</a>
-              <br />
-            </div>
-            <div class='callees'>
-              29 &#40;97 &#37;&#41;
-              samples spent calling
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L1021'>setindex&#33;</a>
-              <br />
-              1 &#40;3 &#37;&#41;
-              samples spent calling
-              <a href='essentials.jl-6646314ef053cabc1fb0c7169141839960bb6d65.html#L14'>getindex</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>            dest&#91;idx&#93; &#61; @ncall &#36;N getindex src j</span>
           </td>
         </tr>
         <tr id='L918'>
           <td class='lineno'>918</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>5 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              5 &#40;0 &#37;&#41;
-              samples spent in macro expansion
-              <br />
-              
-              5 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='cartesian.jl-43670565a5d33b50703b7873d7a94f9c7762342a.html#L64'>line 64</a>
-              <br />
-            </div>
-            <div class='callees'>
-              5 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='range.jl-3cb7d87d5756058b8423e9126dc85e84dff43b0f.html#L901'>iterate</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>            Dy &#61; iterate&#40;D, state&#41;</span>
           </td>
         </tr>

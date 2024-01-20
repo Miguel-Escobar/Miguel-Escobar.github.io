@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -3870,27 +3870,23 @@
         </tr>
         <tr id='L385'>
           <td class='lineno'>385</td>
-          <td class='tracecount excl'>8 &#40;0 &#37;&#41;</td>
-          <td class='tracecount incl'>4303 &#40;100 &#37;&#41;</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'>41 &#40;100 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              4303 &#40;100 &#37;&#41;
+              41 &#40;100 &#37;&#41;
               samples spent in eval
               <br />
-              8 &#40;0 &#37;&#41; &#40;ex.&#41;,
-              4303 &#40;100 &#37;&#41; &#40;incl.&#41;
+              
+              41 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from include_string
               <a href='loading.jl-287e0cd1a4f312e09d6dcac96a27d509274c7f13.html#L2070'>line 2070</a>
               <br />
             </div>
             <div class='callees'>
-              4291 &#40;100 &#37;&#41;
+              41 &#40;100 &#37;&#41;
               samples spent calling
-              <a href='solve.jl-a9c1e38cf21c5b684195c2a1b94a95ecda4f2719.html#L970'>solve</a>
-              <br />
-              4 &#40;0 &#37;&#41;
-              samples spent calling
-              <a href='typeinfer.jl-8e4b85001ffd72fbf4d74221dddacb171abdc21a.html#L1078'>typeinf_ext_toplevel</a>
+              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L33'>top-level scope</a>
               <br />
             </div>
             <span class='code'>eval&#40;m::Module, @nospecialize&#40;e&#41;&#41; &#61; ccall&#40;:jl_toplevel_eval_in, Any, &#40;Any, Any&#41;, m, e&#41;</span>
@@ -4808,40 +4804,20 @@
         </tr>
         <tr id='L477'>
           <td class='lineno'>477</td>
-          <td class='tracecount excl'>747 &#40;17 &#37;&#41;</td>
-          <td class='tracecount incl'>748 &#40;17 &#37;&#41;</td>
+          <td class='tracecount excl'>1 &#40;2 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              748 &#40;17 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in Array
               <br />
-              727 &#40;97 &#37;&#41; &#40;ex.&#41;,
-              728 &#40;97 &#37;&#41; &#40;incl.&#41;
-              when called from SizedArray
-              <a href='StaticArraysCore.jl-23b08cdece845567d15cc8ff80fcd2da83fe1a33.html#L270'>line 270</a>
-              <br />
-              13 &#40;2 &#37;&#41; &#40;ex.&#41;,
-              13 &#40;2 &#37;&#41; &#40;incl.&#41;
+              1 &#40;100 &#37;&#41; &#40;ex.&#41;,
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from Array
               <a href='boot.jl-fef1004c4424587ed08745bc71950c764ba0a651.html#L486'>line 486</a>
               <br />
-              6 &#40;1 &#37;&#41; &#40;ex.&#41;,
-              6 &#40;1 &#37;&#41; &#40;incl.&#41;
-              when called from similar
-              <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L415'>line 415</a>
-              <br />
-              1 &#40;0 &#37;&#41; &#40;ex.&#41;,
-              1 &#40;0 &#37;&#41; &#40;incl.&#41;
-              when called from Array
-              <a href='range.jl-3cb7d87d5756058b8423e9126dc85e84dff43b0f.html#L1385'>line 1385</a>
-              <br />
             </div>
-            <div class='callees'>
-              1 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='asyncevent.jl-263cd1bf05da06f9470d9940100318295669c7e7.html#L194'>uvfinalize</a>
-              <br />
-            </div>
+            
             <span class='code'>Array&#123;T,1&#125;&#40;::UndefInitializer, m::Int&#41; where &#123;T&#125; &#61;</span>
           </td>
         </tr>
@@ -4857,20 +4833,15 @@
         </tr>
         <tr id='L479'>
           <td class='lineno'>479</td>
-          <td class='tracecount excl'>106 &#40;2 &#37;&#41;</td>
-          <td class='tracecount incl'>106 &#40;2 &#37;&#41;</td>
+          <td class='tracecount excl'>2 &#40;5 &#37;&#41;</td>
+          <td class='tracecount incl'>2 &#40;5 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              106 &#40;2 &#37;&#41;
+              2 &#40;5 &#37;&#41;
               samples spent in Array
               <br />
-              69 &#40;65 &#37;&#41; &#40;ex.&#41;,
-              69 &#40;65 &#37;&#41; &#40;incl.&#41;
-              when called from Array
-              <a href='boot.jl-fef1004c4424587ed08745bc71950c764ba0a651.html#L492'>line 492</a>
-              <br />
-              37 &#40;35 &#37;&#41; &#40;ex.&#41;,
-              37 &#40;35 &#37;&#41; &#40;incl.&#41;
+              2 &#40;100 &#37;&#41; &#40;ex.&#41;,
+              2 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from Array
               <a href='boot.jl-fef1004c4424587ed08745bc71950c764ba0a651.html#L487'>line 487</a>
               <br />
@@ -4942,20 +4913,20 @@
         <tr id='L486'>
           <td class='lineno'>486</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>13 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              13 &#40;0 &#37;&#41;
+              1 &#40;2 &#37;&#41;
               samples spent in Array
               <br />
               
-              13 &#40;100 &#37;&#41; &#40;incl.&#41;
+              1 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from similar
               <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L420'>line 420</a>
               <br />
             </div>
             <div class='callees'>
-              13 &#40;100 &#37;&#41;
+              1 &#40;100 &#37;&#41;
               samples spent calling
               <a href='boot.jl-fef1004c4424587ed08745bc71950c764ba0a651.html#L477'>Array</a>
               <br />
@@ -4966,20 +4937,20 @@
         <tr id='L487'>
           <td class='lineno'>487</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>37 &#40;1 &#37;&#41;</td>
+          <td class='tracecount incl'>2 &#40;5 &#37;&#41;</td>
           <td>
             <div class='call-sites'>
-              37 &#40;1 &#37;&#41;
+              2 &#40;5 &#37;&#41;
               samples spent in Array
               <br />
               
-              37 &#40;100 &#37;&#41; &#40;incl.&#41;
+              2 &#40;100 &#37;&#41; &#40;incl.&#41;
               when called from similar
               <a href='array.jl-f70c8abeed4edbe13dc93f1af89cdd7dee29570f.html#L420'>line 420</a>
               <br />
             </div>
             <div class='callees'>
-              37 &#40;100 &#37;&#41;
+              2 &#40;100 &#37;&#41;
               samples spent calling
               <a href='boot.jl-fef1004c4424587ed08745bc71950c764ba0a651.html#L479'>Array</a>
               <br />
@@ -5030,24 +5001,10 @@
         <tr id='L492'>
           <td class='lineno'>492</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>69 &#40;2 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              69 &#40;2 &#37;&#41;
-              samples spent in Array
-              <br />
-              
-              69 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from macro expansion
-              <a href='Einsum.jl-240ef19ca9679e2b890b910276efff9a2bf36c94.html#L208'>line 208</a>
-              <br />
-            </div>
-            <div class='callees'>
-              69 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='boot.jl-fef1004c4424587ed08745bc71950c764ba0a651.html#L479'>Array</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>Array&#123;T&#125;&#40;::UndefInitializer, m::Int, n::Int&#41; where &#123;T&#125; &#61; Array&#123;T,2&#125;&#40;undef, m, n&#41;</span>
           </td>
         </tr>
@@ -5124,24 +5081,10 @@
         <tr id='L500'>
           <td class='lineno'>500</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>1 &#40;0 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              1 &#40;0 &#37;&#41;
-              samples spent in Array
-              <br />
-              
-              1 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from collect
-              <a href='range.jl-3cb7d87d5756058b8423e9126dc85e84dff43b0f.html#L1393'>line 1393</a>
-              <br />
-            </div>
-            <div class='callees'>
-              1 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='range.jl-3cb7d87d5756058b8423e9126dc85e84dff43b0f.html#L1385'>Array</a>
-              <br />
-            </div>
+            
+            
             <span class='code'>Array&#40;A::AbstractArray&#123;T,N&#125;&#41;    where &#123;T,N&#125;   &#61; Array&#123;T,N&#125;&#40;A&#41;</span>
           </td>
         </tr>

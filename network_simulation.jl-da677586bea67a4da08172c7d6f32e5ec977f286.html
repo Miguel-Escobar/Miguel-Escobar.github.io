@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
     <link rel='stylesheet' type='text/css' href='statprofiler.css'></link>
-    <title>StatProfilerHTML - ..\..\..\.julia\packages\DifferentialEquations\v7yof\src\default_solve.jl</title>
+    <title>StatProfilerHTML - ..\..\..\..\..\..\c:\Users\Miguel\Documents\GitHub\Coupled-FHN\src\network_simulation.jl</title>
   </head>
   <body>
     <div class='report-header'>
@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -31,30 +31,11 @@
         <tr id='L1'>
           <td class='lineno'>1</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>4230 &#40;98 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              8460 &#40;197 &#37;&#41;
-              samples spent in __solve
-              <br />
-              
-              4230 &#40;50 &#37;&#41; &#40;incl.&#41;
-              when called from __solve
-              <a href='default_solve.jl-b00c6265da670e2a97ae933d787bd901ca200092.html#L1'>line 1</a>
-              <br />
-              
-              4230 &#40;50 &#37;&#41; &#40;incl.&#41;
-              when called from #__solve#61
-              <a href='solve.jl-a9c1e38cf21c5b684195c2a1b94a95ecda4f2719.html#L1370'>line 1370</a>
-              <br />
-            </div>
-            <div class='callees'>
-              4230 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='default_solve.jl-b00c6265da670e2a97ae933d787bd901ca200092.html#L1'>#__solve#1</a>
-              <br />
-            </div>
-            <span class='code'>function DiffEqBase.__solve&#40;prob::DiffEqBase.DEProblem,</span>
+            
+            
+            <span class='code'>using DifferentialEquations # For later, so that I don&#39;t have to import it when I use this code.</span>
           </td>
         </tr>
         <tr id='L2'>
@@ -64,7 +45,7 @@
           <td>
             
             
-            <span class='code'>    alg::Union&#123;Nothing, DiffEqBase.DEAlgorithm&#125;,</span>
+            <span class='code'>using StaticArrays</span>
           </td>
         </tr>
         <tr id='L3'>
@@ -74,7 +55,7 @@
           <td>
             
             
-            <span class='code'>    args...; default_set &#61; false, kwargs...&#41;</span>
+            <span class='code'>using Statistics</span>
           </td>
         </tr>
         <tr id='L4'>
@@ -84,7 +65,7 @@
           <td>
             
             
-            <span class='code'>    if default_set &#61;&#61; true</span>
+            <span class='code'>using Tullio</span>
           </td>
         </tr>
         <tr id='L5'>
@@ -94,7 +75,7 @@
           <td>
             
             
-            <span class='code'>        error&#40;&quot;The chosen algorithm, &#36;alg, does not exist. Please verify that the appropriate solver package has been installed.&quot;&#41;</span>
+            <span class='code'>using Einsum</span>
           </td>
         </tr>
         <tr id='L6'>
@@ -104,7 +85,7 @@
           <td>
             
             
-            <span class='code'>    end</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L7'>
@@ -114,7 +95,7 @@
           <td>
             
             
-            <span class='code'>    alg, extra_kwargs &#61; default_algorithm&#40;prob; kwargs...&#41;</span>
+            <span class='code'>function fhn_eom&#40;x, params&#41;</span>
           </td>
         </tr>
         <tr id='L8'>
@@ -124,7 +105,7 @@
           <td>
             
             
-            <span class='code'>    alg &#61; DiffEqBase.prepare_alg&#40;alg, prob.u0, prob.p, prob&#41;</span>
+            <span class='code'>    a &#61; params&#91;1&#93;</span>
           </td>
         </tr>
         <tr id='L9'>
@@ -134,7 +115,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    eps &#61; params&#91;2&#93;</span>
           </td>
         </tr>
         <tr id='L10'>
@@ -144,7 +125,7 @@
           <td>
             
             
-            <span class='code'>    if alg isa SciMLBase.AbstractNonlinearAlgorithm &amp;&amp;</span>
+            <span class='code'>    dx &#61; &#40;x&#91;1&#93; - &#40;x&#91;1&#93;^3&#41;/3 - x&#91;2&#93;&#41;/eps</span>
           </td>
         </tr>
         <tr id='L11'>
@@ -154,7 +135,7 @@
           <td>
             
             
-            <span class='code'>       prob isa SciMLBase.AbstractSteadyStateProblem</span>
+            <span class='code'>    dy &#61; x&#91;1&#93; &#43; a</span>
           </td>
         </tr>
         <tr id='L12'>
@@ -164,7 +145,7 @@
           <td>
             
             
-            <span class='code'>        prob &#61; NonlinearProblem&#40;prob&#41;</span>
+            <span class='code'>    return SVector&#123;2&#125;&#40;dx, dy&#41;</span>
           </td>
         </tr>
         <tr id='L13'>
@@ -174,22 +155,17 @@
           <td>
             
             
-            <span class='code'>    end</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L14'>
           <td class='lineno'>14</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>4230 &#40;98 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
             
-            <div class='callees'>
-              4230 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='solve.jl-a9c1e38cf21c5b684195c2a1b94a95ecda4f2719.html#L970'>solve</a>
-              <br />
-            </div>
-            <span class='code'>    DiffEqBase.solve&#40;prob, alg, args...; default_set &#61; true, kwargs..., extra_kwargs...&#41;</span>
+            
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L15'>
@@ -199,7 +175,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>function bmatrix&#40;phi, eps&#41;</span>
           </td>
         </tr>
         <tr id='L16'>
@@ -209,7 +185,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    return -&#91;cos&#40;phi&#41;/eps sin&#40;phi&#41;/eps; -sin&#40;phi&#41; cos&#40;phi&#41;&#93;</span>
           </td>
         </tr>
         <tr id='L17'>
@@ -219,7 +195,7 @@
           <td>
             
             
-            <span class='code'>function DiffEqBase.__init&#40;prob::DiffEqBase.DEProblem,</span>
+            <span class='code'>    #return SArray&#123;Tuple&#123;2,2&#125;&#125;&#40;-cos&#40;phi&#41;/eps, sin&#40;phi&#41;/eps, -sin&#40;phi&#41;/eps, -cos&#40;phi&#41;&#41;</span>
           </td>
         </tr>
         <tr id='L18'>
@@ -229,7 +205,7 @@
           <td>
             
             
-            <span class='code'>    alg::Union&#123;Nothing, DiffEqBase.DEAlgorithm&#125;,</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L19'>
@@ -239,7 +215,7 @@
           <td>
             
             
-            <span class='code'>    args...; default_set &#61; false, kwargs...&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L20'>
@@ -247,29 +223,48 @@
           <td class='tracecount excl'></td>
           <td class='tracecount incl'></td>
           <td>
+            <div class='call-sites'>
+              40 &#40;98 &#37;&#41;
+              samples spent in coupled_fhn_eom&#33;
+              <br />
+              
+              40 &#40;100 &#37;&#41; &#40;incl.&#41;
+              when called from macro expansion
+              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L25'>line 25</a>
+              <br />
+            </div>
             
-            
-            <span class='code'>    if default_set &#61;&#61; true</span>
+            <span class='code'>function coupled_fhn_eom&#33;&#40;dx, x, a, eps, coupling_strength, coupling_matrix, b&#41;</span>
           </td>
         </tr>
         <tr id='L21'>
           <td class='lineno'>21</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
+          <td class='tracecount incl'>1 &#40;2 &#37;&#41;</td>
           <td>
             
-            
-            <span class='code'>        error&#40;&quot;The chosen algorithm, &#36;alg, does not exist. Please verify that the appropriate solver package has been installed.&quot;&#41;</span>
+            <div class='callees'>
+              1 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='abstractarray.jl-ae9f9139c27e09a84b5f353b532336912dbcf7cf.html#L1288'>getindex</a>
+              <br />
+            </div>
+            <span class='code'>    N &#61; length&#40;coupling_matrix&#91;1, :&#93;&#41;</span>
           </td>
         </tr>
         <tr id='L22'>
           <td class='lineno'>22</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
+          <td class='tracecount incl'>7 &#40;17 &#37;&#41;</td>
           <td>
             
-            
-            <span class='code'>    end</span>
+            <div class='callees'>
+              7 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='reshapedarray.jl-64fd89425735b884d66ac44786074157bf164ffe.html#L51'>reshape</a>
+              <br />
+            </div>
+            <span class='code'>    eachneuron &#61; reshape&#40;x, &#40;2, N&#41;&#41;</span>
           </td>
         </tr>
         <tr id='L23'>
@@ -279,7 +274,7 @@
           <td>
             
             
-            <span class='code'>    alg, extra_kwargs &#61; default_algorithm&#40;prob; kwargs...&#41;</span>
+            <span class='code'>    coupling_terms &#61; b * eachneuron</span>
           </td>
         </tr>
         <tr id='L24'>
@@ -289,17 +284,22 @@
           <td>
             
             
-            <span class='code'>    alg &#61; DiffEqBase.prepare_alg&#40;alg, prob.u0, prob.p, prob&#41;</span>
+            <span class='code'>    # @einsum coupling&#91;i, j&#93; :&#61; coupling_matrix&#91;i, r&#93; * coupling_terms&#91;j, r&#93;</span>
           </td>
         </tr>
         <tr id='L25'>
           <td class='lineno'>25</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
+          <td class='tracecount incl'>30 &#40;73 &#37;&#41;</td>
           <td>
             
-            
-            <span class='code'>    DiffEqBase.init&#40;prob, alg, args...; default_set &#61; true, kwargs..., extra_kwargs...&#41;</span>
+            <div class='callees'>
+              30 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='macro.jl-c385e4a5c3d9d541c25702f8d4abafd11724f5d0.html#L976'>macro expansion</a>
+              <br />
+            </div>
+            <span class='code'>    @tullio coupling&#91;i, j&#93; :&#61; coupling_matrix&#91;i, r&#93; * coupling_terms&#91;j, r&#93;</span>
           </td>
         </tr>
         <tr id='L26'>
@@ -309,7 +309,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    eom_params &#61; SVector&#123;2&#125;&#40;a, eps&#41;</span>
           </td>
         </tr>
         <tr id='L27'>
@@ -319,7 +319,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    for i in range&#40;1, N&#41;</span>
           </td>
         </tr>
         <tr id='L28'>
@@ -329,7 +329,7 @@
           <td>
             
             
-            <span class='code'>#&#61;</span>
+            <span class='code'>        thisneuron &#61; @view eachneuron&#91;:, i&#93;</span>
           </td>
         </tr>
         <tr id='L29'>
@@ -339,7 +339,7 @@
           <td>
             
             
-            <span class='code'>function DiffEqBase.__solve&#40;prob::JumpProcesses.JumpProblem,alg::Nothing,</span>
+            <span class='code'>        thiscoupling &#61; @view coupling&#91;i, :&#93;</span>
           </td>
         </tr>
         <tr id='L30'>
@@ -349,7 +349,7 @@
           <td>
             
             
-            <span class='code'>               args...;default_set&#61;false,kwargs...&#41;</span>
+            <span class='code'>        # dx_i &#61; fhn_eom&#40;thisneuron, eom_params&#41; .&#43; coupling_strength .* thiscoupling</span>
           </td>
         </tr>
         <tr id='L31'>
@@ -359,7 +359,7 @@
           <td>
             
             
-            <span class='code'>  if default_set &#61;&#61; true</span>
+            <span class='code'>        # # dx_i &#61; fhn_eom&#40;eachneuron&#91;:, i&#93;, eom_params&#41; .&#43; coupling_strength .* coupling&#91;i, :&#93;</span>
           </td>
         </tr>
         <tr id='L32'>
@@ -369,17 +369,22 @@
           <td>
             
             
-            <span class='code'>    error&#40;&quot;The chosen algorithm, &#36;alg, does not exist. Please verify that the appropriate solver package has been installed.&quot;&#41;</span>
+            <span class='code'>        # dx&#91;2*i-1:2*i&#93; &#61; dx_i</span>
           </td>
         </tr>
         <tr id='L33'>
           <td class='lineno'>33</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
+          <td class='tracecount incl'>2 &#40;5 &#37;&#41;</td>
           <td>
             
-            
-            <span class='code'>  end</span>
+            <div class='callees'>
+              2 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='broadcast.jl-ec78b01a937a5f485a43b2075237494697b739cc.html#L911'>materialize&#33;</a>
+              <br />
+            </div>
+            <span class='code'>        dx&#91;2*i-1:2*i&#93; .&#61; fhn_eom&#40;thisneuron, eom_params&#41; .&#43; coupling_strength .* thiscoupling</span>
           </td>
         </tr>
         <tr id='L34'>
@@ -389,7 +394,7 @@
           <td>
             
             
-            <span class='code'>  alg,extra_kwargs &#61; default_algorithm&#40;prob.prob;kwargs...&#41;</span>
+            <span class='code'>    end</span>
           </td>
         </tr>
         <tr id='L35'>
@@ -399,7 +404,7 @@
           <td>
             
             
-            <span class='code'>  DiffEqBase.__solve&#40;prob,alg,args...;default_set&#61;true,kwargs...,extra_kwargs...&#41;</span>
+            <span class='code'>    nothing</span>
           </td>
         </tr>
         <tr id='L36'>
@@ -410,36 +415,6 @@
             
             
             <span class='code'>end</span>
-          </td>
-        </tr>
-        <tr id='L37'>
-          <td class='lineno'>37</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>&#61;#</span>
-          </td>
-        </tr>
-        <tr id='L38'>
-          <td class='lineno'>38</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'></span>
-          </td>
-        </tr>
-        <tr id='L39'>
-          <td class='lineno'>39</td>
-          <td class='tracecount excl'></td>
-          <td class='tracecount incl'></td>
-          <td>
-            
-            
-            <span class='code'>export default_algorithm </span>
           </td>
         </tr>
       </tbody>

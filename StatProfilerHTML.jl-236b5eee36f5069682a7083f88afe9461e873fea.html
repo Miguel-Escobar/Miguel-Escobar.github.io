@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
     <link rel='stylesheet' type='text/css' href='statprofiler.css'></link>
-    <title>StatProfilerHTML - ..\..\..\.julia\packages\FunctionWrappersWrappers\9XR0m\src\FunctionWrappersWrappers.jl</title>
+    <title>StatProfilerHTML - ..\..\..\.julia\packages\StatProfilerHTML\WyFko\src\StatProfilerHTML.jl</title>
   </head>
   <body>
     <div class='report-header'>
@@ -14,7 +14,7 @@
         StatProfilerHTML.jl report
       </div>
       <div class='generated-on'>
-        Generated on Thu, 18 Jan 2024 13:27:09
+        Generated on Sat, 20 Jan 2024 17:48:01
       </div>
     </div>
     <table>
@@ -35,7 +35,7 @@
           <td>
             
             
-            <span class='code'>module FunctionWrappersWrappers</span>
+            <span class='code'>module StatProfilerHTML</span>
           </td>
         </tr>
         <tr id='L2'>
@@ -55,7 +55,7 @@
           <td>
             
             
-            <span class='code'>using FunctionWrappers</span>
+            <span class='code'>export statprofilehtml, @profilehtml</span>
           </td>
         </tr>
         <tr id='L4'>
@@ -75,7 +75,7 @@
           <td>
             
             
-            <span class='code'>export FunctionWrappersWrapper</span>
+            <span class='code'>include&#40;&quot;Reports.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L6'>
@@ -85,7 +85,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>include&#40;&quot;HTML.jl&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L7'>
@@ -95,7 +95,7 @@
           <td>
             
             
-            <span class='code'>struct FunctionWrappersWrapper&#123;FW,FB&#125;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L8'>
@@ -105,7 +105,7 @@
           <td>
             
             
-            <span class='code'>  fw::FW</span>
+            <span class='code'>import Base.StackTraces: StackFrame</span>
           </td>
         </tr>
         <tr id='L9'>
@@ -115,36 +115,17 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>import Profile</span>
           </td>
         </tr>
         <tr id='L10'>
           <td class='lineno'>10</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>8269 &#40;192 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              8269 &#40;192 &#37;&#41;
-              samples spent in FunctionWrappersWrapper
-              <br />
-              
-              4135 &#40;50 &#37;&#41; &#40;incl.&#41;
-              when called from ODEFunction
-              <a href='scimlfunctions.jl-0a00505cbe8ab73ea5e7e89b84786e30d5593cc3.html#L2355'>line 2355</a>
-              <br />
-              
-              4134 &#40;50 &#37;&#41; &#40;incl.&#41;
-              when called from Void
-              <a href='utils.jl-f2f16f4555a4700558488a33258238c24e79a60f.html#L481'>line 481</a>
-              <br />
-            </div>
-            <div class='callees'>
-              8269 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='FunctionWrappersWrappers.jl-a1c131e3cf330fd82baa20fa342e34278b5d94ca.html#L12'>_call</a>
-              <br />
-            </div>
-            <span class='code'>&#40;fww::FunctionWrappersWrapper&#123;FW,FB&#125;&#41;&#40;args::Vararg&#123;Any,K&#125;&#41; where &#123;FW,K,FB&#125; &#61; _call&#40;fww.fw, args, fww&#41;</span>
+            
+            
+            <span class='code'>import Profile: LineInfoDict</span>
           </td>
         </tr>
         <tr id='L11'>
@@ -154,31 +135,17 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>import Dates: now</span>
           </td>
         </tr>
         <tr id='L12'>
           <td class='lineno'>12</td>
           <td class='tracecount excl'></td>
-          <td class='tracecount incl'>8269 &#40;192 &#37;&#41;</td>
+          <td class='tracecount incl'></td>
           <td>
-            <div class='call-sites'>
-              8269 &#40;192 &#37;&#41;
-              samples spent in _call
-              <br />
-              
-              8269 &#40;100 &#37;&#41; &#40;incl.&#41;
-              when called from FunctionWrappersWrapper
-              <a href='FunctionWrappersWrappers.jl-a1c131e3cf330fd82baa20fa342e34278b5d94ca.html#L10'>line 10</a>
-              <br />
-            </div>
-            <div class='callees'>
-              8269 &#40;100 &#37;&#41;
-              samples spent calling
-              <a href='FunctionWrappers.jl-7fcdeed2ba5540325c7c13af3a6358374a457e56.html#L144'>FunctionWrapper</a>
-              <br />
-            </div>
-            <span class='code'>_call&#40;fw::Tuple&#123;FunctionWrappers.FunctionWrapper&#123;R,A&#125;,Vararg&#125;, arg::A, fww::FunctionWrappersWrapper&#41; where &#123;R,A&#125; &#61; first&#40;fw&#41;&#40;arg...&#41;</span>
+            
+            
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L13'>
@@ -188,7 +155,7 @@
           <td>
             
             
-            <span class='code'>_call&#40;fw::Tuple&#123;FunctionWrappers.FunctionWrapper&#123;R,A1&#125;,Vararg&#125;, arg::A2, fww::FunctionWrappersWrapper&#41; where &#123;R,A1,A2&#125; &#61; _call&#40;Base.tail&#40;fw&#41;, arg, fww&#41;</span>
+            <span class='code'>import .Reports: Report</span>
           </td>
         </tr>
         <tr id='L14'>
@@ -198,7 +165,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>import .HTML: output</span>
           </td>
         </tr>
         <tr id='L15'>
@@ -208,7 +175,7 @@
           <td>
             
             
-            <span class='code'>const NO_FUNCTIONWRAPPER_FOUND_MESSAGE &#61; &quot;No matching function wrapper was found&#33;&quot;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L16'>
@@ -218,7 +185,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>function statprofilehtml&#40;data::Vector&#123;&lt;:Unsigned&#125; &#61; UInt&#91;&#93;, litrace::LineInfoDict &#61; LineInfoDict&#40;&#41;;</span>
           </td>
         </tr>
         <tr id='L17'>
@@ -228,7 +195,7 @@
           <td>
             
             
-            <span class='code'>struct NoFunctionWrapperFoundError &lt;: Exception end</span>
+            <span class='code'>                         from_c&#61;false, path&#61;&quot;statprof&quot;&#41;</span>
           </td>
         </tr>
         <tr id='L18'>
@@ -238,7 +205,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    if length&#40;data&#41; &#61;&#61; 0</span>
           </td>
         </tr>
         <tr id='L19'>
@@ -248,7 +215,7 @@
           <td>
             
             
-            <span class='code'>function Base.showerror&#40;io::IO, e::NoFunctionWrapperFoundError&#41;</span>
+            <span class='code'>        &#40;data, litrace&#41; &#61; Profile.retrieve&#40;&#41;</span>
           </td>
         </tr>
         <tr id='L20'>
@@ -258,7 +225,7 @@
           <td>
             
             
-            <span class='code'>    print&#40;io, NO_FUNCTIONWRAPPER_FOUND_MESSAGE&#41;</span>
+            <span class='code'>    end</span>
           </td>
         </tr>
         <tr id='L21'>
@@ -268,7 +235,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L22'>
@@ -278,7 +245,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    fullpath &#61; abspath&#40;path&#41;</span>
           </td>
         </tr>
         <tr id='L23'>
@@ -288,7 +255,7 @@
           <td>
             
             
-            <span class='code'>_call&#40;::Tuple&#123;&#125;, arg, fww::FunctionWrappersWrapper&#123;&lt;:Any,false&#125;&#41; &#61; throw&#40;NoFunctionWrapperFoundError&#40;&#41;&#41;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L24'>
@@ -298,7 +265,7 @@
           <td>
             
             
-            <span class='code'>_call&#40;::Tuple&#123;&#125;, arg, fww::FunctionWrappersWrapper&#123;&lt;:Any,true&#125;&#41; &#61; first&#40;fww.fw&#41;.obj&#91;&#93;&#40;arg...&#41;</span>
+            <span class='code'>    report &#61; Report&#40;data, litrace, from_c, now&#40;&#41;&#41;</span>
           </td>
         </tr>
         <tr id='L25'>
@@ -308,7 +275,7 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>    HTML.output&#40;report, path&#41;</span>
           </td>
         </tr>
         <tr id='L26'>
@@ -318,7 +285,7 @@
           <td>
             
             
-            <span class='code'>function FunctionWrappersWrapper&#40;f::F, argtypes::Tuple&#123;Vararg&#123;Any,K&#125;&#125;, rettypes::Tuple&#123;Vararg&#123;DataType,K&#125;&#125;, fallback::Val&#123;FB&#125;&#61;Val&#123;false&#125;&#40;&#41;&#41; where &#123;F,K,FB&#125;</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L27'>
@@ -328,7 +295,7 @@
           <td>
             
             
-            <span class='code'>  fwt &#61; map&#40;argtypes, rettypes&#41; do A, R</span>
+            <span class='code'>    @info &quot;Wrote profiling output to file://&#36;fullpath/index.html .&quot;</span>
           </td>
         </tr>
         <tr id='L28'>
@@ -338,7 +305,7 @@
           <td>
             
             
-            <span class='code'>    FunctionWrappers.FunctionWrapper&#123;R,A&#125;&#40;f&#41;</span>
+            <span class='code'>end</span>
           </td>
         </tr>
         <tr id='L29'>
@@ -348,7 +315,7 @@
           <td>
             
             
-            <span class='code'>  end</span>
+            <span class='code'></span>
           </td>
         </tr>
         <tr id='L30'>
@@ -358,7 +325,7 @@
           <td>
             
             
-            <span class='code'>  FunctionWrappersWrapper&#123;typeof&#40;fwt&#41;,FB&#125;&#40;fwt&#41;</span>
+            <span class='code'>macro profilehtml&#40;expr&#41;</span>
           </td>
         </tr>
         <tr id='L31'>
@@ -368,7 +335,7 @@
           <td>
             
             
-            <span class='code'>end</span>
+            <span class='code'>    quote</span>
           </td>
         </tr>
         <tr id='L32'>
@@ -378,11 +345,155 @@
           <td>
             
             
-            <span class='code'></span>
+            <span class='code'>        Profile.clear&#40;&#41;</span>
           </td>
         </tr>
         <tr id='L33'>
           <td class='lineno'>33</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>        res &#61; try</span>
+          </td>
+        </tr>
+        <tr id='L34'>
+          <td class='lineno'>34</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'>41 &#40;100 &#37;&#41;</td>
+          <td>
+            <div class='call-sites'>
+              41 &#40;100 &#37;&#41;
+              samples spent in macro expansion
+              <br />
+              
+              41 &#40;100 &#37;&#41; &#40;incl.&#41;
+              when called from top-level scope
+              <a href='prof_test.jl-c21a38e7238f5077a79c0b6d70006be2c2244843.html#L33'>line 33</a>
+              <br />
+            </div>
+            <div class='callees'>
+              41 &#40;100 &#37;&#41;
+              samples spent calling
+              <a href='Profile.jl-6601ef08cf13ac60d4d4c29afdb17d7f521badcb.html#L27'>macro expansion</a>
+              <br />
+            </div>
+            <span class='code'>            Profile.@profile &#36;&#40;esc&#40;expr&#41;&#41;</span>
+          </td>
+        </tr>
+        <tr id='L35'>
+          <td class='lineno'>35</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>        catch ex</span>
+          </td>
+        </tr>
+        <tr id='L36'>
+          <td class='lineno'>36</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>            ex isa InterruptException || rethrow&#40;ex&#41;</span>
+          </td>
+        </tr>
+        <tr id='L37'>
+          <td class='lineno'>37</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>            @info &quot;You interrupted the computation; generating profiling view for the computation so far.&quot;</span>
+          </td>
+        </tr>
+        <tr id='L38'>
+          <td class='lineno'>38</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>        end</span>
+          </td>
+        </tr>
+        <tr id='L39'>
+          <td class='lineno'>39</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>        statprofilehtml&#40;&#41;</span>
+          </td>
+        </tr>
+        <tr id='L40'>
+          <td class='lineno'>40</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>        res</span>
+          </td>
+        </tr>
+        <tr id='L41'>
+          <td class='lineno'>41</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>    end</span>
+          </td>
+        </tr>
+        <tr id='L42'>
+          <td class='lineno'>42</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>end</span>
+          </td>
+        </tr>
+        <tr id='L43'>
+          <td class='lineno'>43</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'></span>
+          </td>
+        </tr>
+        <tr id='L44'>
+          <td class='lineno'>44</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'>precompile&#40;Tuple&#123;typeof&#40;statprofilehtml&#41;&#125;&#41;</span>
+          </td>
+        </tr>
+        <tr id='L45'>
+          <td class='lineno'>45</td>
+          <td class='tracecount excl'></td>
+          <td class='tracecount incl'></td>
+          <td>
+            
+            
+            <span class='code'></span>
+          </td>
+        </tr>
+        <tr id='L46'>
+          <td class='lineno'>46</td>
           <td class='tracecount excl'></td>
           <td class='tracecount incl'></td>
           <td>
